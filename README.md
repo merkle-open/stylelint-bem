@@ -1,0 +1,1 @@
+# stylelint-bem-namics
