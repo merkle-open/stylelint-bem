@@ -65,10 +65,10 @@ the linting again:
 ```js
 {
   "plugins": [
-    "stylelint-nitro-bem"
+    "@namics/stylelint-bem"
   ],
   "rules": {
-    "plugin/selector-nitro-bem": true,
+    "plugin/stylelint-bem-namics": true,
   }
 }
 ```  
