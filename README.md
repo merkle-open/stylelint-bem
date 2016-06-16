@@ -1,4 +1,5 @@
-# Stylelint BEM Namics
+# Stylelint BEM Namics 
+[![Build Status](https://travis-ci.org/namics/stylelint-bem-namics.svg?branch=master)](https://travis-ci.org/namics/stylelint-bem-namics) [![npm version](https://badge.fury.io/js/%40namics%2Fstylelint-bem.svg)](https://badge.fury.io/js/%40namics%2Fstylelint-bem) [![Dependency Status](https://david-dm.org/namics/stylelint-bem-namics.svg)](https://david-dm.org/namics/stylelint-bem-namics)
 
 Verifies that the given css follows the namics BEM rules.
 
@@ -41,40 +42,40 @@ npm install @namics/stylelint-bem --save-dev
 ## Valid examples
 
 ```css
-.a-block {}
-.m-block {}
-.o-block {}
-.l-block {}
-.g-block {}
-.h-block {}
+.a-[block-name] {}
+.m-[block-name] {}
+.o-[block-name] {}
+.l-[block-name] {}
+.g-[block-name] {}
+.h-[block-name] {}
 
-.a-block--modifier {}
-.m-block--modifier {}
-.o-block--modifier {}
-.l-block--modifier {}
-.g-block--modifier {}
-.h-block--modifier {}
+.a-[block-name]--[modifier-name] {}
+.m-[block-name]--[modifier-name] {}
+.o-[block-name]--[modifier-name] {}
+.l-[block-name]--[modifier-name] {}
+.g-[block-name]--[modifier-name] {}
+.h-[block-name]--[modifier-name] {}
 
-.a-block__block {}
-.m-block__block {}
-.o-block__block {}
-.l-block__block {}
-.g-block__block {}
-.h-block__block {}
+.a-[block-name]__[element-name] {}
+.m-[block-name]__[element-name] {}
+.o-[block-name]__[element-name] {}
+.l-[block-name]__[element-name] {}
+.g-[block-name]__[element-name] {}
+.h-[block-name]__[element-name] {}
 
-.js-a-block__hook-name {}
-.js-m-block__hook-name {}
-.js-o-block__hook-name {}
-.js-l-block__hook-name {}
-.js-g-block__hook-name {}
-.js-h-block__hook-name {}
+.js-a-[block-name]__[hook-name] {}
+.js-m-[block-name]__[hook-name] {}
+.js-o-[block-name]__[hook-name] {}
+.js-l-[block-name]__[hook-name] {}
+.js-g-[block-name]__[hook-name] {}
+.js-h-[block-name]__[hook-name] {}
 
-.state-a-block--state-name {}
-.state-m-block--state-name {}
-.state-o-block--state-name {}
-.state-l-block--state-name {}
-.state-g-block--state-name {}
-.state-h-block--state-name {}
+.state-a-[block-name]--[state-name] {}
+.state-m-[block-name]--[state-name] {}
+.state-o-[block-name]--[state-name] {}
+.state-l-[block-name]--[state-name] {}
+.state-g-[block-name]--[state-name] {}
+.state-h-[block-name]--[state-name] {}
 ```
 
 
