@@ -1,10 +1,44 @@
-# Stylint Nitro Bem
+# Stylelint BEM Namics
 
-Verifies that the given css follows the nitro bem rules.
+Verifies that the given css follows the namics BEM rules.
 
 ![screenshot](https://raw.githubusercontent.com/namics/stylelint-bem-namics/master/example.png)
 
-##Valid examples
+## Installation
+
+```
+npm install @namics/stylelint-bem --save-dev
+```
+
+## Configuration
+
+### Simple configuration
+```js
+{
+  "plugins": [
+    "@namics/stylelint-bem"
+  ],
+  "rules": {
+    "plugin/stylelint-bem-namics": true,
+  }
+}
+```  
+
+### Advanced configuration
+```js
+{
+  "plugins": [
+    "@namics/stylelint-bem"
+  ],
+  "rules": {
+    "plugin/stylelint-bem-namics": {
+      "namespace": "ux-"
+    },
+  }
+}
+```  
+
+## Valid examples
 
 ```css
 .a-block {}
@@ -43,6 +77,7 @@ Verifies that the given css follows the nitro bem rules.
 .state-h-block--state-name {}
 ```
 
+
 ## Exception
 
 Whenever you will apply rules you will run into edge cases like third-party code or wysiwyg content where those rules have to be bent a little bit.
@@ -58,34 +93,6 @@ the linting again:
         font-size: 34px;
     }
 ```
-
-## Configuration
-
-### Simple configuration
-```js
-{
-  "plugins": [
-    "@namics/stylelint-bem"
-  ],
-  "rules": {
-    "plugin/stylelint-bem-namics": true,
-  }
-}
-```  
-
-### Advanced configuration
-```js
-{
-  "plugins": [
-    "@namics/stylelint-bem"
-  ],
-  "rules": {
-    "plugin/stylelint-bem-namics": {
-      "namespace": "ux-"
-    },
-  }
-}
-```  
 
 ## Changelog
 

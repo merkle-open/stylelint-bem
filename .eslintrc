@@ -1,7 +1,7 @@
 {
   "extends": "eslint:recommended",
   "env": {
-    "node": true,
+    "node": true
   },
   "rules": {
     "comma-dangle": [2, "always-multiline"],
@@ -23,6 +23,6 @@
     "space-after-keywords": [2, "always"],
     "space-before-blocks": [2, "always"],
     "space-in-parens": [2, "never"],
-    "space-unary-ops": 2,
+    "space-unary-ops": 2
   }
 }

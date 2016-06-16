@@ -1,5 +1,5 @@
 {
-  "name": "@namics/stylelint-bem-plugin",
+  "name": "@namics/stylelint-bem",
   "version": "1.0.0",
   "description": "A stylelint plugin for the Namics BEM definitions",
   "main": "index.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/namics/stylelint-bem.git"
+    "url": "https://github.com/namics/stylelint-bem-namics.git"
   },
   "files": [
     "index.js"
