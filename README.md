@@ -87,11 +87,11 @@ the linting again:
 
 ```css
 /* wysiwyg does not follow bem */
-/* stylelint-disable */
+/* stylelint-disable plugin/stylelint-bem-namics */
     .wysiwyg .headline {
-        /* stylelint-enable */
         font-size: 34px;
     }
+/* stylelint-enable plugin/stylelint-bem-namics */
 ```
 
 ## Changelog
