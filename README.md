@@ -2,6 +2,8 @@
 
 Verifies that the given css follows the nitro bem rules.
 
+![screenshot](https://raw.githubusercontent.com/namics/stylelint-bem-namics/master/example.png)
+
 ##Valid examples
 
 ```css
@@ -87,4 +89,4 @@ the linting again:
 
 ## Changelog
 
-Please see the CHANGELOG.md
+Please see the [CHANGELOG.md](https://github.com/namics/stylelint-bem-namics/blob/master/CHANGELOG.md)
