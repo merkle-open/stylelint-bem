@@ -63,13 +63,6 @@ npm install @namics/stylelint-bem --save-dev
 .g-[block-name]__[element-name] {}
 .h-[block-name]__[element-name] {}
 
-.js-a-[block-name]__[hook-name] {}
-.js-m-[block-name]__[hook-name] {}
-.js-o-[block-name]__[hook-name] {}
-.js-l-[block-name]__[hook-name] {}
-.js-g-[block-name]__[hook-name] {}
-.js-h-[block-name]__[hook-name] {}
-
 .state-a-[block-name]--[state-name] {}
 .state-m-[block-name]--[state-name] {}
 .state-o-[block-name]--[state-name] {}
