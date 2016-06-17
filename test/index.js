@@ -134,7 +134,7 @@ testRule(plugin.rule, {
 });
 
 
-// Should not conflict with keyframes
+// Should not conflict with keyframes or less mixins
 testRule(plugin.rule, {
   ruleName: plugin.ruleName,
   config: {},
@@ -142,7 +142,10 @@ testRule(plugin.rule, {
 
   accept: [
     { code: '@keyframes blue-background-change { 0% { background: black } }' },
+    { code: '.mixin() { }' },
   ],
 
-  reject: [],
+  reject: [
+    { code: '.no-mixin:not(x) { }'},
+  ],
 });
