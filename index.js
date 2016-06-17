@@ -22,7 +22,6 @@ module.exports = stylelint.createPlugin(ruleName, function(options) {
     'h',
   ];
   var validHelpers = [
-    'js',
     'state',
   ];
 
@@ -61,9 +60,6 @@ module.exports = stylelint.createPlugin(ruleName, function(options) {
     }
     if (/(^|[^_])_([^_]|$)/.test(className)) {
       return 'use "_" only as element separator'
-    }
-    if (prefix === 'js' && className.indexOf('__') === -1) {
-      return 'use js-[prefix]-[block]__[state] syntax';
     }
     if (prefix === 'state' && className.indexOf('--') === -1) {
       return 'use state-[prefix]-[block]--[state] syntax';

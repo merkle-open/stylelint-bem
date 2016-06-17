@@ -14,13 +14,6 @@ testRule(plugin.rule, {
     { code: '.g-block {}' },
     { code: '.h-block {}' },
 
-    { code: '.js-a-block__hook-name {}' },
-    { code: '.js-m-block__hook-name {}' },
-    { code: '.js-o-block__hook-name {}' },
-    { code: '.js-l-block__hook-name {}' },
-    { code: '.js-g-block__hook-name {}' },
-    { code: '.js-h-block__hook-name {}' },
-
     { code: '.state-a-block--state-name {}' },
     { code: '.state-m-block--state-name {}' },
     { code: '.state-o-block--state-name {}' },
@@ -46,23 +39,19 @@ testRule(plugin.rule, {
   reject: [
     {
       code: '.z-block {}',
-      message: 'Expected class name "z-block" to start with a valid prefix: "a", "m", "o", "l", "g", "h", "js", "state". (' + plugin.ruleName + ')',
+      message: 'Expected class name "z-block" to start with a valid prefix: "a", "m", "o", "l", "g", "h", "state". (' + plugin.ruleName + ')',
     },
     {
       code: '.0-block {}',
-      message: 'Expected class name "0-block" to start with a valid prefix: "a", "m", "o", "l", "g", "h", "js", "state". (' + plugin.ruleName + ')',
+      message: 'Expected class name "0-block" to start with a valid prefix: "a", "m", "o", "l", "g", "h", "state". (' + plugin.ruleName + ')',
     },
     {
       code: '.-block {}',
-      message: 'Expected class name "-block" to start with a valid prefix: "a", "m", "o", "l", "g", "h", "js", "state". (' + plugin.ruleName + ')',
+      message: 'Expected class name "-block" to start with a valid prefix: "a", "m", "o", "l", "g", "h", "state". (' + plugin.ruleName + ')',
     },
     {
       code: '.--block {}',
-      message: 'Expected class name "--block" to start with a valid prefix: "a", "m", "o", "l", "g", "h", "js", "state". (' + plugin.ruleName + ')',
-    },
-    {
-      code: '.js-block {}',
-      message: 'Expected class name "js-block" to use js-[prefix]-[block] syntax. Valid js prefixes: "js-a", "js-m", "js-o", "js-l", "js-g", "js-h". (' + plugin.ruleName + ')',
+      message: 'Expected class name "--block" to start with a valid prefix: "a", "m", "o", "l", "g", "h", "state". (' + plugin.ruleName + ')',
     },
     {
       code: '.state-block {}',
@@ -89,10 +78,6 @@ testRule(plugin.rule, {
       message: 'Expected class name "a-Block" to contain no uppercase letters. (' + plugin.ruleName + ')',
     },
     {
-      code: '.js-a-block {}',
-      message: 'Expected class name "js-a-block" to use js-[prefix]-[block]__[state] syntax. (' + plugin.ruleName + ')',
-    },
-    {
       code: '.state-a-block {}',
       message: 'Expected class name "state-a-block" to use state-[prefix]-[block]--[state] syntax. (' + plugin.ruleName + ')',
     },
@@ -117,13 +102,6 @@ testRule(plugin.rule, {
     { code: '.namespace-l-block {}' },
     { code: '.namespace-g-block {}' },
     { code: '.namespace-h-block {}' },
-
-    { code: '.namespace-js-a-block__hook-name {}' },
-    { code: '.namespace-js-m-block__hook-name {}' },
-    { code: '.namespace-js-o-block__hook-name {}' },
-    { code: '.namespace-js-l-block__hook-name {}' },
-    { code: '.namespace-js-g-block__hook-name {}' },
-    { code: '.namespace-js-h-block__hook-name {}' },
 
     { code: '.namespace-state-a-block--state-name {}' },
     { code: '.namespace-state-m-block--state-name {}' },
