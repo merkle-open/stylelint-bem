@@ -28,12 +28,12 @@ testRule(plugin.rule, {
     { code: '.g-block--modifier {}' },
     { code: '.h-block--modifier {}' },
 
-    { code: '.a-block__block {}' },
-    { code: '.m-block__block {}' },
-    { code: '.o-block__block {}' },
-    { code: '.l-block__block {}' },
-    { code: '.g-block__block {}' },
-    { code: '.h-block__block {}' },
+    { code: '.a-block__element {}' },
+    { code: '.m-block__element {}' },
+    { code: '.o-block__element {}' },
+    { code: '.l-block__element {}' },
+    { code: '.g-block__element {}' },
+    { code: '.h-block__element {}' },
   ],
 
   reject: [
@@ -129,6 +129,10 @@ testRule(plugin.rule, {
     {
       code: '.a-block {}',
       message: 'Expected class name "a-block" to use the namespace "namespace-". (' + plugin.ruleName + ')',
+    },
+    {
+      code: '.namespace-z-block {}',
+      message: 'Expected class name "namespace-z-block" to start with a valid prefix: "namespace-a", "namespace-m", "namespace-o", "namespace-l", "namespace-g", "namespace-h", "namespace-state". (' + plugin.ruleName + ')',
     },
   ],
 });
