@@ -43,10 +43,10 @@ module.exports = stylelint.createPlugin(ruleName, function(options) {
     if (validHelpers.indexOf(prefix) !== -1) {
       var subPrefix = className.split('-')[1];
       if (validComponents.indexOf(subPrefix) === -1) {
-        return 'use ' + prefix + '-[prefix]-[block] syntax. Valid ' + prefix + ' prefixes: "' +
+        return 'use ' + namespace + prefix + '-[prefix]-[block] syntax. Valid ' + namespace + prefix + ' prefixes: "' + namespace +
           validComponents.map(function(component) {
             return prefix + '-' + component;
-          }).join('", "') + '"';
+          }).join('", "' + namespace) + '"';
       }
     }
     if (/__(_|.*__)/.test(className)) {
@@ -62,7 +62,7 @@ module.exports = stylelint.createPlugin(ruleName, function(options) {
       return 'use "_" only as element separator'
     }
     if (prefix === 'state' && className.indexOf('--') === -1) {
-      return 'use state-[prefix]-[block]--[state] syntax';
+      return 'use ' + namespace + 'state-[prefix]-[block]--[state] syntax';
     }
   }
 

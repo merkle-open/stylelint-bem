@@ -54,10 +54,6 @@ testRule(plugin.rule, {
       message: 'Expected class name "--block" to start with a valid prefix: "a", "m", "o", "l", "g", "h", "state". (' + plugin.ruleName + ')',
     },
     {
-      code: '.state-block {}',
-      message: 'Expected class name "state-block" to use state-[prefix]-[block] syntax. Valid state prefixes: "state-a", "state-m", "state-o", "state-l", "state-g", "state-h". (' + plugin.ruleName + ')',
-    },
-    {
       code: '.a-block___x {}',
       message: 'Expected class name "a-block___x" to use only one "__" element separator. (' + plugin.ruleName + ')',
     },
@@ -76,6 +72,10 @@ testRule(plugin.rule, {
     {
       code: '.a-Block {}',
       message: 'Expected class name "a-Block" to contain no uppercase letters. (' + plugin.ruleName + ')',
+    },
+    {
+      code: '.state-block {}',
+      message: 'Expected class name "state-block" to use state-[prefix]-[block] syntax. Valid state prefixes: "state-a", "state-m", "state-o", "state-l", "state-g", "state-h". (' + plugin.ruleName + ')',
     },
     {
       code: '.state-a-block {}',
@@ -133,6 +133,14 @@ testRule(plugin.rule, {
     {
       code: '.namespace-z-block {}',
       message: 'Expected class name "namespace-z-block" to start with a valid prefix: "namespace-a", "namespace-m", "namespace-o", "namespace-l", "namespace-g", "namespace-h", "namespace-state". (' + plugin.ruleName + ')',
+    },
+    {
+      code: '.namespace-state-block {}',
+      message: 'Expected class name "namespace-state-block" to use namespace-state-[prefix]-[block] syntax. Valid namespace-state prefixes: "namespace-state-a", "namespace-state-m", "namespace-state-o", "namespace-state-l", "namespace-state-g", "namespace-state-h". (' + plugin.ruleName + ')',
+    },
+    {
+      code: '.namespace-state-a-block {}',
+      message: 'Expected class name "namespace-state-a-block" to use namespace-state-[prefix]-[block]--[state] syntax. (' + plugin.ruleName + ')',
     },
   ],
 });
