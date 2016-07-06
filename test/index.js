@@ -39,19 +39,19 @@ testRule(plugin.rule, {
   reject: [
     {
       code: '.z-block {}',
-      message: 'Expected class name "z-block" to start with a valid prefix: "a", "m", "o", "l", "g", "h", "state". (' + plugin.ruleName + ')',
+      message: 'Expected class name "z-block" to start with a valid prefix: "a-", "m-", "o-", "l-", "g-", "h-", "state-". (' + plugin.ruleName + ')',
     },
     {
       code: '.0-block {}',
-      message: 'Expected class name "0-block" to start with a valid prefix: "a", "m", "o", "l", "g", "h", "state". (' + plugin.ruleName + ')',
+      message: 'Expected class name "0-block" to start with a valid prefix: "a-", "m-", "o-", "l-", "g-", "h-", "state-". (' + plugin.ruleName + ')',
     },
     {
       code: '.-block {}',
-      message: 'Expected class name "-block" to start with a valid prefix: "a", "m", "o", "l", "g", "h", "state". (' + plugin.ruleName + ')',
+      message: 'Expected class name "-block" to start with a valid prefix: "a-", "m-", "o-", "l-", "g-", "h-", "state-". (' + plugin.ruleName + ')',
     },
     {
       code: '.--block {}',
-      message: 'Expected class name "--block" to start with a valid prefix: "a", "m", "o", "l", "g", "h", "state". (' + plugin.ruleName + ')',
+      message: 'Expected class name "--block" to start with a valid prefix: "a-", "m-", "o-", "l-", "g-", "h-", "state-". (' + plugin.ruleName + ')',
     },
     {
       code: '.a-block___x {}',
@@ -75,7 +75,7 @@ testRule(plugin.rule, {
     },
     {
       code: '.state-block {}',
-      message: 'Expected class name "state-block" to use state-[prefix]-[block] syntax. Valid state prefixes: "state-a", "state-m", "state-o", "state-l", "state-g", "state-h". (' + plugin.ruleName + ')',
+      message: 'Expected class name "state-block" to use state-[prefix]-[block] syntax. Valid state prefixes: "state-a-", "state-m-", "state-o-", "state-l-", "state-g-", "state-h-". (' + plugin.ruleName + ')',
     },
     {
       code: '.state-a-block {}',
@@ -132,11 +132,19 @@ testRule(plugin.rule, {
     },
     {
       code: '.namespace-z-block {}',
-      message: 'Expected class name "namespace-z-block" to start with a valid prefix: "namespace-a", "namespace-m", "namespace-o", "namespace-l", "namespace-g", "namespace-h", "namespace-state". (' + plugin.ruleName + ')',
+      message: 'Expected class name "namespace-z-block" to start with a valid prefix: "namespace-a-", "namespace-m-", "namespace-o-", "namespace-l-", "namespace-g-", "namespace-h-", "namespace-state-". (' + plugin.ruleName + ')',
+    },
+    {
+      code: '.namespace-z-block__element {}',
+      message: 'Expected class name "namespace-z-block__element" to start with a valid prefix: "namespace-a-", "namespace-m-", "namespace-o-", "namespace-l-", "namespace-g-", "namespace-h-", "namespace-state-". (' + plugin.ruleName + ')',
+    },
+    {
+      code: '.namespace-state-m__element {}',
+      message: 'Expected class name "namespace-state-m__element" to use namespace-state-[prefix]-[block] syntax. Valid namespace-state prefixes: "namespace-state-a-", "namespace-state-m-", "namespace-state-o-", "namespace-state-l-", "namespace-state-g-", "namespace-state-h-". (' + plugin.ruleName + ')',
     },
     {
       code: '.namespace-state-block {}',
-      message: 'Expected class name "namespace-state-block" to use namespace-state-[prefix]-[block] syntax. Valid namespace-state prefixes: "namespace-state-a", "namespace-state-m", "namespace-state-o", "namespace-state-l", "namespace-state-g", "namespace-state-h". (' + plugin.ruleName + ')',
+      message: 'Expected class name "namespace-state-block" to use namespace-state-[prefix]-[block] syntax. Valid namespace-state prefixes: "namespace-state-a-", "namespace-state-m-", "namespace-state-o-", "namespace-state-l-", "namespace-state-g-", "namespace-state-h-". (' + plugin.ruleName + ')',
     },
     {
       code: '.namespace-state-a-block {}',
