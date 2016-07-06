@@ -74,8 +74,20 @@ testRule(plugin.rule, {
       message: 'Expected class name "a-Block" to contain no uppercase letters. (' + plugin.ruleName + ')',
     },
     {
+      code: '.m-__element {}',
+      message: 'Expected class name "m-__element" to use [prefix]-[block] syntax. (' + plugin.ruleName + ')',
+    },
+    {
+      code: '.m--modifier {}',
+      message: 'Expected class name "m--modifier" to use [prefix]-[block] syntax. (' + plugin.ruleName + ')',
+    },
+    {
+      code: '.state-m--state {}',
+      message: 'Expected class name "state-m--state" to use state-[prefix]-[block]--[state] syntax. (' + plugin.ruleName + ')',
+    },
+    {
       code: '.state-block {}',
-      message: 'Expected class name "state-block" to use state-[prefix]-[block] syntax. Valid state prefixes: "state-a-", "state-m-", "state-o-", "state-l-", "state-g-", "state-h-". (' + plugin.ruleName + ')',
+      message: 'Expected class name "state-block" to use state-[prefix]-[block]--[state] syntax. Valid state prefixes: "state-a-", "state-m-", "state-o-", "state-l-", "state-g-", "state-h-". (' + plugin.ruleName + ')',
     },
     {
       code: '.state-a-block {}',
@@ -139,12 +151,24 @@ testRule(plugin.rule, {
       message: 'Expected class name "namespace-z-block__element" to start with a valid prefix: "namespace-a-", "namespace-m-", "namespace-o-", "namespace-l-", "namespace-g-", "namespace-h-", "namespace-state-". (' + plugin.ruleName + ')',
     },
     {
+      code: '.namespace-m-__element {}',
+      message: 'Expected class name "namespace-m-__element" to use namespace-[prefix]-[block] syntax. (' + plugin.ruleName + ')',
+    },
+    {
+      code: '.namespace-m--modifier {}',
+      message: 'Expected class name "namespace-m--modifier" to use namespace-[prefix]-[block] syntax. (' + plugin.ruleName + ')',
+    },
+    {
+      code: '.namespace-state-m--state {}',
+      message: 'Expected class name "namespace-state-m--state" to use namespace-state-[prefix]-[block]--[state] syntax. (' + plugin.ruleName + ')',
+    },
+    {
       code: '.namespace-state-m__element {}',
-      message: 'Expected class name "namespace-state-m__element" to use namespace-state-[prefix]-[block] syntax. Valid namespace-state prefixes: "namespace-state-a-", "namespace-state-m-", "namespace-state-o-", "namespace-state-l-", "namespace-state-g-", "namespace-state-h-". (' + plugin.ruleName + ')',
+      message: 'Expected class name "namespace-state-m__element" to use namespace-state-[prefix]-[block]--[state] syntax. Valid namespace-state prefixes: "namespace-state-a-", "namespace-state-m-", "namespace-state-o-", "namespace-state-l-", "namespace-state-g-", "namespace-state-h-". (' + plugin.ruleName + ')',
     },
     {
       code: '.namespace-state-block {}',
-      message: 'Expected class name "namespace-state-block" to use namespace-state-[prefix]-[block] syntax. Valid namespace-state prefixes: "namespace-state-a-", "namespace-state-m-", "namespace-state-o-", "namespace-state-l-", "namespace-state-g-", "namespace-state-h-". (' + plugin.ruleName + ')',
+      message: 'Expected class name "namespace-state-block" to use namespace-state-[prefix]-[block]--[state] syntax. Valid namespace-state prefixes: "namespace-state-a-", "namespace-state-m-", "namespace-state-o-", "namespace-state-l-", "namespace-state-g-", "namespace-state-h-". (' + plugin.ruleName + ')',
     },
     {
       code: '.namespace-state-a-block {}',
@@ -152,7 +176,6 @@ testRule(plugin.rule, {
     },
   ],
 });
-
 
 // Should not conflict with keyframes or less mixins
 testRule(plugin.rule, {

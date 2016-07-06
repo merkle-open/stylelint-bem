@@ -30,24 +30,44 @@ module.exports = stylelint.createPlugin(ruleName, function(options) {
     .concat(validHelpers);
 
   function getClassNameErrors(className, namespace) {
+    var patternStart = '';
+    var patternEnd = '';
+
+    if (/[A-Z]/.test(className)) {
+      return 'contain no uppercase letters';
+    }
     if (namespace) {
       if (className.indexOf(namespace) !== 0) {
         return 'use the namespace "' + namespace + '"';
       }
       className = className.substr(namespace.length);
+      patternStart += namespace;
     }
+
     var prefix = className.split('-')[0];
+    var helper = '';
     if (className.indexOf('-') === -1 || validPrefixes.indexOf(prefix) === -1) {
       return 'start with a valid prefix: "' + namespace + validPrefixes.join('-", "' + namespace) + '-"'
     }
     if (validHelpers.indexOf(prefix) !== -1) {
-      var subPrefix = className.split('-')[1];
-      if (validComponents.indexOf(subPrefix) === -1) {
-        return 'use ' + namespace + prefix + '-[prefix]-[block] syntax. Valid ' + namespace + prefix + ' prefixes: "' + namespace +
+      helper = prefix;
+      prefix = className.split('-')[1];
+      patternStart += helper + '-';
+      patternEnd += '--[' + helper + ']';
+      className = className.substr(helper.length + 1 + prefix.length + 1);
+      if (validComponents.indexOf(prefix) === -1) {
+        return 'use ' + patternStart + '[prefix]-[block]' + patternEnd + ' syntax. Valid ' + namespace + helper + ' prefixes: "' + namespace +
           validComponents.map(function(component) {
-            return prefix + '-' + component;
+            return helper + '-' + component;
           }).join('-", "' + namespace) + '-"';
       }
+    }
+    else {
+      className = className.substr(prefix.length + 1);
+    }
+
+    if (!/^[a-z]/.test(className)) {
+      return 'use ' + patternStart + '[prefix]-[block]' + patternEnd + ' syntax';
     }
     if (/__(_|.*__)/.test(className)) {
       return 'use only one "__" element separator';
@@ -55,14 +75,11 @@ module.exports = stylelint.createPlugin(ruleName, function(options) {
     if (/--(-|.*--)/.test(className)) {
       return 'use only one "--" modifier separator';
     }
-    if (/[A-Z]/.test(className)) {
-      return 'contain no uppercase letters';
-    }
     if (/(^|[^_])_([^_]|$)/.test(className)) {
       return 'use "_" only as element separator'
     }
-    if (prefix === 'state' && className.indexOf('--') === -1) {
-      return 'use ' + namespace + 'state-[prefix]-[block]--[state] syntax';
+    if (helper === 'state' && className.indexOf('--') === -1) {
+      return 'use ' + patternStart + '[prefix]-[block]' + patternEnd + ' syntax';
     }
   }
 
