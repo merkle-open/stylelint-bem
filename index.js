@@ -102,7 +102,7 @@ module.exports = stylelint.createPlugin(ruleName, function(options) {
         return;
       }
       rule.selectors.forEach(function(selector) {
-        if (selector.indexOf('(') !== -1 && selector.indexOf(':') === -1) {
+        if (selector.indexOf('(') !== -1 && (selector.indexOf(':') === -1 || selector.indexOf('@') !== -1)) {
           // Skip less mixins
           return;
         }

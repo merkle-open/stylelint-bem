@@ -186,6 +186,8 @@ testRule(plugin.rule, {
   accept: [
     { code: '@keyframes blue-background-change { 0% { background: black } }' },
     { code: '.mixin() { }' },
+    { code: '.mixin(@prop: black) { background: @prop }' },
+    { code: '#namespace { }' },
   ],
 
   reject: [
