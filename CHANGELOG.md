@@ -1,3 +1,7 @@
+## 2.1.0
+
+- allow less mixins with props
+
 ## 2.0.0
 
 - Add Tests for missing blocks
