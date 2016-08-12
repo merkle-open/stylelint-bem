@@ -1,6 +1,6 @@
 {
   "name": "@namics/stylelint-bem",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "A stylelint plugin for the Namics BEM definitions",
   "main": "index.js",
   "scripts": {
@@ -30,11 +30,13 @@
     "postcss-resolve-nested-selector": "^0.1.1"
   },
   "peerDependencies": {
-    "stylelint": ">=3.0.2"
+    "stylelint": ">=7.1.0"
   },
   "devDependencies": {
-    "eslint": "^1.10.3",
-    "stylelint": ">=3.0.2",
+    "@namics/eslint-config": "^1.0.0",
+    "eslint": "^3.2.2",
+    "eslint-plugin-import": "^1.13.0",
+    "stylelint": ">=7.1.0",
     "stylelint-test-rule-tape": "^0.2.0"
   }
 }

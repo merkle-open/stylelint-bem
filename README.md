@@ -1,4 +1,4 @@
-# Stylelint BEM Namics 
+# Stylelint BEM Namics
 [![Build Status](https://travis-ci.org/namics/stylelint-bem-namics.svg?branch=master)](https://travis-ci.org/namics/stylelint-bem-namics) [![npm version](https://badge.fury.io/js/%40namics%2Fstylelint-bem.svg)](https://badge.fury.io/js/%40namics%2Fstylelint-bem) [![Dependency Status](https://david-dm.org/namics/stylelint-bem-namics.svg)](https://david-dm.org/namics/stylelint-bem-namics)
 
 Verifies that the given css follows the namics BEM rules.
@@ -62,6 +62,13 @@ npm install @namics/stylelint-bem --save-dev
 .l-[block-name]__[element-name] {}
 .g-[block-name]__[element-name] {}
 .h-[block-name]__[element-name] {}
+
+.a-[block-name]__[element-name]__[element-name] {}
+.m-[block-name]__[element-name]__[element-name] {}
+.o-[block-name]__[element-name]__[element-name] {}
+.l-[block-name]__[element-name]__[element-name] {}
+.g-[block-name]__[element-name]__[element-name] {}
+.h-[block-name]__[element-name]__[element-name] {}
 
 .state-a-[block-name]--[state-name] {}
 .state-m-[block-name]--[state-name] {}
