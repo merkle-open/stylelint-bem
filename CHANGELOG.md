@@ -1,3 +1,7 @@
+## 3.0.1
+
+- Fix `Rule expected but "&" found` when using & inside a sass mixin
+
 ## 3.0.0
 
 - drop node 0.12 support

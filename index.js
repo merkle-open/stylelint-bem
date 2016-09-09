@@ -178,7 +178,8 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 				resolvedNestedSelector(selector, rule).forEach((resolvedSelector) => {
 					let classNames = [];
 					try {
-						classNames = extractCssClasses(resolvedSelector);
+						// Remove ampersand from inner sass mixins and parse the class names
+						classNames = extractCssClasses(resolvedSelector.replace(/&\s*/ig, ''));
 					} catch (e) {
 						stylelint.utils.report({
 							ruleName,
