@@ -1,7 +1,7 @@
 # Stylelint BEM Namics
 [![Build Status](https://travis-ci.org/namics/stylelint-bem-namics.svg?branch=master)](https://travis-ci.org/namics/stylelint-bem-namics) [![npm version](https://badge.fury.io/js/%40namics%2Fstylelint-bem.svg)](https://badge.fury.io/js/%40namics%2Fstylelint-bem) [![Dependency Status](https://david-dm.org/namics/stylelint-bem-namics.svg)](https://david-dm.org/namics/stylelint-bem-namics)
 
-Verifies that the given css follows the namics BEM rules.
+Verifies that the given css/less/scss follows the following BEM code conventions.
 
 ![screenshot](https://raw.githubusercontent.com/namics/stylelint-bem-namics/master/example.png)
 
@@ -26,6 +26,9 @@ npm install @namics/stylelint-bem --save-dev
 ```  
 
 ### Advanced configuration
+
+You can define an optional namespace which has to be prepended before every class name:
+
 ```js
 {
   "plugins": [
@@ -40,6 +43,13 @@ npm install @namics/stylelint-bem --save-dev
 ```  
 
 ## Valid examples
+
+* a Atom
+* m Molecule
+* o Organism
+* l Layout
+* g Grid
+* h Helper
 
 ```css
 .a-[block-name] {}
