@@ -8,7 +8,7 @@ const extractCssClasses = require('css-selector-classes');
 const ruleName = 'plugin/stylelint-bem-namics';
 const messages = stylelint.utils.ruleMessages(ruleName, {
 	expected: function expected(selector, expectedSelector) {
-		return `Expected class name "${selector}\" to ${expectedSelector}.`;
+		return `Expected class name "${selector}" to ${expectedSelector}.`;
 	}
 });
 
