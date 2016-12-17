@@ -9,7 +9,7 @@ const ruleName = 'plugin/stylelint-bem-namics';
 const messages = stylelint.utils.ruleMessages(ruleName, {
 	expected: function expected(selector, expectedSelector) {
 		return `Expected class name "${selector}" to ${expectedSelector}.`;
-	}
+	},
 });
 
 module.exports = stylelint.createPlugin(ruleName, (options) => {
@@ -21,11 +21,11 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 		'o',
 		'l',
 		'g',
-		'h'
+		'h',
 	];
 
 	const validHelpers = [
-		'state'
+		'state',
 	];
 
 	const validPrefixes = []
@@ -156,7 +156,7 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 		const validOptions = stylelint.utils.validateOptions({
 			ruleName,
 			result,
-			actual: options
+			actual: options,
 		});
 
 		if (!validOptions) {
@@ -185,7 +185,7 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 							ruleName,
 							result,
 							node: rule,
-							message: e.message
+							message: e.message,
 						});
 					}
 					classNames.forEach((className) => {
@@ -197,7 +197,7 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 								ruleName,
 								result,
 								node: rule,
-								message: messages.expected(className, classNameErrorCache[className])
+								message: messages.expected(className, classNameErrorCache[className]),
 							});
 						}
 					});
