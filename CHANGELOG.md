@@ -1,3 +1,8 @@
+## 3.0.2
+
+- update dependencies
+- add appveyor
+
 ## 3.0.1
 
 - Fix `Rule expected but "&" found` when using & inside a sass mixin

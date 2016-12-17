@@ -20,7 +20,7 @@ npm install @namics/stylelint-bem --save-dev
     "@namics/stylelint-bem"
   ],
   "rules": {
-    "plugin/stylelint-bem-namics": true,
+    "plugin/stylelint-bem-namics": true
   }
 }
 ```  
@@ -37,19 +37,25 @@ You can define an optional namespace which has to be prepended before every clas
   "rules": {
     "plugin/stylelint-bem-namics": {
       "namespace": "ux-"
-    },
+    }
   }
 }
 ```  
 
 ## Valid examples
 
-* a Atom
-* m Molecule
-* o Organism
-* l Layout
-* g Grid
-* h Helper
+### Pattern Prefixes 
+
+* `a` Atom
+* `m` Molecule
+* `o` Organism
+* `l` Layout
+* `g` Grid
+* `h` Helper
+
+### Helper Prefixes
+
+* `state` State
 
 ```css
 .a-[block-name] {}
@@ -87,7 +93,6 @@ You can define an optional namespace which has to be prepended before every clas
 .state-g-[block-name]--[state-name] {}
 .state-h-[block-name]--[state-name] {}
 ```
-
 
 ## Exception
 
