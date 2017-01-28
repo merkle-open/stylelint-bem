@@ -3,6 +3,9 @@
   "version": "3.0.2",
   "description": "A stylelint plugin for the Namics BEM definitions",
   "main": "index.js",
+  "engines": {
+    "node": ">=4"
+  },
   "scripts": {
     "test": "node test",
     "posttest": "eslint .",
@@ -26,17 +29,17 @@
   "author": "Jan Nicklas",
   "license": "MIT",
   "dependencies": {
-    "css-selector-classes": "^0.1.2",
-    "postcss-resolve-nested-selector": "^0.1.1"
+    "css-selector-classes": "0.1.2",
+    "postcss-resolve-nested-selector": "0.1.1"
   },
   "peerDependencies": {
     "stylelint": ">=7.1.0"
   },
   "devDependencies": {
-    "@namics/eslint-config": "^2.1.0",
-    "eslint": "^3.12.2",
-    "eslint-plugin-import": "^2.2.0",
+    "@namics/eslint-config": "2.1.0",
+    "eslint": "3.14.1",
+    "eslint-plugin-import": "2.2.0",
     "stylelint": ">=7.6.0",
-    "stylelint-test-rule-tape": "^0.2.0"
+    "stylelint-test-rule-tape": "0.2.0"
   }
 }
