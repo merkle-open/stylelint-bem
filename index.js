@@ -15,7 +15,7 @@ const messages = stylelint.utils.ruleMessages(ruleName, {
 module.exports = stylelint.createPlugin(ruleName, (options) => {
 	options = options || '';
 
-	const validPatternPrefixes = [
+	const validPatternPrefixes = Array.isArray(options.patternPrefixes) ? options.patternPrefixes : [
 		'a',
 		'm',
 		'o',
@@ -24,7 +24,7 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 		'h',
 	];
 
-	const validHelperPrefixes = [
+	const validHelperPrefixes = Array.isArray(options.helperPrefixes) ? options.helperPrefixes : [
 		'state',
 	];
 
