@@ -15,7 +15,7 @@ const messages = stylelint.utils.ruleMessages(ruleName, {
 module.exports = stylelint.createPlugin(ruleName, (options) => {
 	options = options || '';
 
-	const validComponents = [
+	const validPatternPrefixes = [
 		'a',
 		'm',
 		'o',
@@ -24,20 +24,20 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 		'h',
 	];
 
-	const validHelpers = [
+	const validHelperPrefixes = [
 		'state',
 	];
 
 	const validPrefixes = []
-		.concat(validComponents)
-		.concat(validHelpers);
+		.concat(validPatternPrefixes)
+		.concat(validHelperPrefixes);
 
 	/**
 	 * Extracts the namespace, helper and prefix from the given className
 	 * 'ux-state-a-button'
 	 * @param {string} fullClassName the class name
 	 * @param {string} namespace (optional) namespace
-	 * @returns {Object} namespace, helper, component, name
+	 * @returns {Object} namespace, helper, pattern, name
 	 *
 	 */
 	function parseClassName(fullClassName, namespace) {
@@ -53,15 +53,15 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 		}
 		// Handle className with helper prefixes
 		const helperPrefix = className.split('-')[0];
-		if (validHelpers.indexOf(helperPrefix) !== -1) {
+		if (validHelperPrefixes.indexOf(helperPrefix) !== -1) {
 			result.helper = helperPrefix;
 			className = className.substr(helperPrefix.length + 1);
 		}
 		// Handle classNames with prefixes
-		const componentPrefix = className.split('-')[0];
-		if (validComponents.indexOf(componentPrefix) !== -1) {
-			result.component = componentPrefix;
-			className = className.substr(componentPrefix.length + 1);
+		const patternPrefix = className.split('-')[0];
+		if (validPatternPrefixes.indexOf(patternPrefix) !== -1) {
+			result.pattern = patternPrefix;
+			className = className.substr(patternPrefix.length + 1);
 		}
 		result.name = className;
 		return result;
@@ -80,8 +80,8 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 		if (parsedClassName.helper) {
 			validSyntax += `${parsedClassName.helper}-`;
 		}
-		if (parsedClassName.component) {
-			validSyntax += `${parsedClassName.component}-`;
+		if (parsedClassName.pattern) {
+			validSyntax += `${parsedClassName.pattern}-`;
 		} else {
 			validSyntax += '[prefix]-';
 		}
@@ -89,8 +89,8 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 		if (className.indexOf('__') !== -1) {
 			validSyntax += '__[element]';
 		}
-		if (parsedClassName.helper === 'state') {
-			validSyntax += '--[state]';
+		if (validHelperPrefixes.indexOf(parsedClassName.helper) !== -1) {
+			validSyntax += `--[${parsedClassName.helper}]`;
 		} else if (className.indexOf('--') !== -1) {
 			validSyntax += '--[modifier]';
 		}
@@ -114,18 +114,18 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 			return `use the namespace "${namespace}"`;
 		}
 
-		// Valid helper but invalid component prefix
+		// Valid helper but invalid pattern prefix
 		// e.g. 'state-zz-button'
-		if (parsedClassName.helper && !parsedClassName.component) {
-			const validPrefixExamples = validComponents
+		if (parsedClassName.helper && !parsedClassName.pattern) {
+			const validPrefixExamples = validPatternPrefixes
 				.map((prefix) => `"${namespace}${parsedClassName.helper}-${prefix}-"`)
 				.join(', ');
 			return `use the ${getValidSyntax(className, namespace)} syntax. ` +
 				`Valid ${parsedClassName.helper} prefixes: ${validPrefixExamples}`;
 		}
 
-		// Invalid component prefix
-		if (!parsedClassName.component) {
+		// Invalid pattern prefix
+		if (!parsedClassName.pattern) {
 			const validPrefixExamples = validPrefixes
 				.map((prefix) => `"${namespace}${prefix}-"`)
 				.join(', ');
