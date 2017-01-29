@@ -1,3 +1,8 @@
+## 3.1.0
+
+- [feature] add possiblilty to overwrite default patternPrefixes and patternHelpers (#1)
+- [maintenance] update dependecies
+
 ## 3.0.2
 
 - update dependencies
