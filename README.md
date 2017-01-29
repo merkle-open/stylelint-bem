@@ -51,7 +51,7 @@ and in case of emergency you can overwrite the default prefixes
   ],
   "rules": {
     "plugin/stylelint-bem-namics": {
-      "patternPrefixes": [ "a-", "m-", "o-", "t-", "p-" ],
+      "patternPrefixes": [ "a", "m", "o", "t", "p" ],
       "helperPrefixes": [ "state" ]
     }
   }
