@@ -1,3 +1,7 @@
+## 3.1.1
+
+- [docs] example fix
+
 ## 3.1.0
 
 - [feature] add possiblilty to overwrite default patternPrefixes and patternHelpers (#1)
