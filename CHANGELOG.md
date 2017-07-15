@@ -1,3 +1,8 @@
+## 3.1.2
+
+- [maintenance] update dependecies
+- [maintanance] add node 8 ci tests
+
 ## 3.1.1
 
 - [docs] example fix
