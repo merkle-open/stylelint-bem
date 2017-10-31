@@ -1,3 +1,7 @@
+## 3.1.3
+
+- [maintenance] update dependecies
+
 ## 3.1.2
 
 - [maintenance] update dependecies
