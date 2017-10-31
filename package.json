@@ -33,13 +33,13 @@
     "postcss-resolve-nested-selector": "0.1.1"
   },
   "peerDependencies": {
-    "stylelint": ">=7.1.0"
+    "stylelint": "^7.0.0 || ^8.0.0"
   },
   "devDependencies": {
-    "@namics/eslint-config": "4.0.0",
-    "eslint": "4.2.0",
-    "eslint-plugin-import": "2.7.0",
-    "stylelint": ">=7.9.0",
+    "@namics/eslint-config": "4.2.0",
+    "eslint": "4.10.0",
+    "eslint-plugin-import": "2.8.0",
+    "stylelint": "8.2.0",
     "stylelint-test-rule-tape": "0.2.0"
   }
 }
