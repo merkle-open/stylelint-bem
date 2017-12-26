@@ -101,9 +101,10 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 	 * Validates the given className and returns the error if it's not valid
 	 * @param {string} className - the name of the class e.g. 'a-button'
 	 * @param {string} namespace - the namespace (optional)
+	 * @param {boolean} offPrefixCheck - the switch to off prefix-check
 	 * @returns {string} error message
 	 */
-	function getClassNameErrors(className, namespace) {
+	function getClassNameErrors(className, namespace, offPrefixCheck) {
 
 		if (/[A-Z]/.test(className)) {
 			return 'contain no uppercase letters';
@@ -116,7 +117,7 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 
 		// Valid helper but invalid pattern prefix
 		// e.g. 'state-zz-button'
-		if (parsedClassName.helper && !parsedClassName.pattern) {
+		if (!offPrefixCheck && parsedClassName.helper && !parsedClassName.pattern) {
 			const validPrefixExamples = validPatternPrefixes
 				.map((prefix) => `"${namespace}${parsedClassName.helper}-${prefix}-"`)
 				.join(', ');
@@ -125,7 +126,7 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 		}
 
 		// Invalid pattern prefix
-		if (!parsedClassName.pattern) {
+		if (!offPrefixCheck && !parsedClassName.pattern) {
 			const validPrefixExamples = validPrefixes
 				.map((prefix) => `"${namespace}${prefix}-"`)
 				.join(', ');
@@ -164,6 +165,7 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 		}
 
 		const namespace = options.namespace || '';
+		const offPrefixCheck = options.offPrefixCheck || false;
 		const classNameErrorCache = {};
 		root.walkRules((rule) => {
 			// Skip keyframes
@@ -190,7 +192,7 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 					}
 					classNames.forEach((className) => {
 						if (classNameErrorCache[className] === undefined) {
-							classNameErrorCache[className] = getClassNameErrors(className, namespace, rule);
+							classNameErrorCache[className] = getClassNameErrors(className, namespace, offPrefixCheck, rule);
 						}
 						if (classNameErrorCache[className]) {
 							stylelint.utils.report({
