@@ -56,6 +56,21 @@ and in case of emergency you can overwrite the default prefixes
     }
   }
 }
+``` 
+ 
+and you can turn off the checking of prefixes
+
+```js
+{
+"plugins": [
+ "@namics/stylelint-bem"
+],
+"rules": {
+ "plugin/stylelint-bem-namics": {
+   "offPrefixCheck": true
+ }
+}
+}
 ```  
 
 ## Valid examples

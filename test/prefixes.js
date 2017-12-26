@@ -151,3 +151,30 @@ testRule(plugin.rule, {
 		},
 	],
 });
+
+// test the switch of prefix check
+testRule(plugin.rule, {
+	ruleName: plugin.ruleName,
+	config: {
+		offPrefixCheck: true,
+	},
+	skipBasicChecks: true,
+	// should pass without checking prefix
+	accept: [
+		{
+			code: '.block {}',
+		},
+		{
+			code: '.a-block--state-name {}',
+		},
+		{
+			code: '.x-block--modifier {}',
+		},
+		{
+			code: '.f-block__element {}',
+		},
+		{
+			code: '.z-block__element {}',
+		},
+	],
+});
