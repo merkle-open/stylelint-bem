@@ -52,7 +52,23 @@ and in case of emergency you can overwrite the default prefixes
   "rules": {
     "plugin/stylelint-bem-namics": {
       "patternPrefixes": [ "a", "m", "o", "t", "p" ],
-      "helperPrefixes": [ "state" ]
+      "helperPrefixes": [ "is", "has" ]
+    }
+  }
+}
+``` 
+ 
+... or you can pass empty prefixes to disable prefixes completely
+
+```js
+{
+  "plugins": [
+    "@namics/stylelint-bem"
+  ],
+  "rules": {
+    "plugin/stylelint-bem-namics": {
+      "patternPrefixes": [],
+      "helperPrefixes": []
     }
   }
 }

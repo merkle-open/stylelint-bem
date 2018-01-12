@@ -106,7 +106,7 @@ testRule(plugin.rule, {
 	],
 });
 
-// invalid patternPrefixes configuration
+// invalid patternPrefixes configuration - uses default
 testRule(plugin.rule, {
 	ruleName: plugin.ruleName,
 	config: {
@@ -148,6 +148,184 @@ testRule(plugin.rule, {
 		{
 			code: '.a--modifier__block {}',
 			message: 'Expected class name "a--modifier__block" to use the a-[block]__[element]--[modifier] syntax. (' + plugin.ruleName + ')',
+		},
+	],
+});
+
+// empty prefixes
+testRule(plugin.rule, {
+	ruleName: plugin.ruleName,
+	config: {
+		patternPrefixes: [],
+		helperPrefixes: [],
+	},
+	skipBasicChecks: true,
+	accept: [
+		{
+			code: '.block {}',
+		},
+		{
+			code: '.block__element {}',
+		},
+		{
+			code: '.block--modifier {}',
+		},
+		{
+			code: '.block__element--modifier {}',
+		},
+		{
+			code: '.m--modifier {}',
+		},
+		{
+			code: '.a-block--state-name {}',
+		},
+		{
+			code: '.x-block--modifier {}',
+		},
+		{
+			code: '.f-block__element {}',
+		},
+		{
+			code: '.z-block__element--modifier {}',
+		},
+		{
+			code: '.state-m-block {}',
+		},
+		{
+			code: '.state-m--state {}',
+		},
+		{
+			code: '.state-a-block--state-name {}',
+		},
+		{
+			code: '.state-a-block__element--state-name {}',
+		},
+	],
+	reject: [
+		{
+			code: '.block___x {}',
+			message: 'Expected class name "block___x" to use only two "_" as element separator. (' + plugin.ruleName + ')',
+		},
+		{
+			code: '.block---x {}',
+			message: 'Expected class name "block---x" to use only one "--" modifier separator. (' + plugin.ruleName + ')',
+		},
+		{
+			code: '.block--y--x {}',
+			message: 'Expected class name "block--y--x" to use only one "--" modifier separator. (' + plugin.ruleName + ')',
+		},
+		{
+			code: '.Block {}',
+			message: 'Expected class name "Block" to contain no uppercase letters. (' + plugin.ruleName + ')',
+		},
+		{
+			code: '.a-__element {}',
+			message: 'Expected class name "a-__element" to use "-" only for composite names. (' + plugin.ruleName + ')',
+		},
+		{
+			code: '.-block {}',
+			message: 'Expected class name "-block" to use the [block] syntax. (' + plugin.ruleName + ')',
+		},
+		{
+			code: '.--block {}',
+			message: 'Expected class name "--block" to use the [block]--[modifier] syntax. (' + plugin.ruleName + ')',
+		},
+		{
+			code: '.m--modifier__block {}',
+			message: 'Expected class name "m--modifier__block" to use the [block]__[element]--[modifier] syntax. (' + plugin.ruleName + ')',
+		},
+	],
+});
+
+// empty pattern prefixes
+testRule(plugin.rule, {
+	ruleName: plugin.ruleName,
+	config: {
+		patternPrefixes: [],
+		helperPrefixes: ['is', 'has'],
+	},
+	skipBasicChecks: true,
+	accept: [
+		{
+			code: '.block {}',
+		},
+		{
+			code: '.block__element {}',
+		},
+		{
+			code: '.block--modifier {}',
+		},
+		{
+			code: '.block__element--modifier {}',
+		},
+		{
+			code: '.m--modifier {}',
+		},
+		{
+			code: '.a-block--state-name {}',
+		},
+		{
+			code: '.x-block--modifier {}',
+		},
+		{
+			code: '.f-block__element {}',
+		},
+		{
+			code: '.z-block__element--modifier {}',
+		},
+		{
+			code: '.is-m--state {}',
+		},
+		{
+			code: '.is-a-block--state-name {}',
+		},
+		{
+			code: '.is-a-block__element--state-name {}',
+		},
+		{
+			code: '.has-a-block__element--state-name {}',
+		},
+	],
+	reject: [
+		{
+			code: '.block___x {}',
+			message: 'Expected class name "block___x" to use only two "_" as element separator. (' + plugin.ruleName + ')',
+		},
+		{
+			code: '.block---x {}',
+			message: 'Expected class name "block---x" to use only one "--" modifier separator. (' + plugin.ruleName + ')',
+		},
+		{
+			code: '.block--y--x {}',
+			message: 'Expected class name "block--y--x" to use only one "--" modifier separator. (' + plugin.ruleName + ')',
+		},
+		{
+			code: '.Block {}',
+			message: 'Expected class name "Block" to contain no uppercase letters. (' + plugin.ruleName + ')',
+		},
+		{
+			code: '.a-__element {}',
+			message: 'Expected class name "a-__element" to use "-" only for composite names. (' + plugin.ruleName + ')',
+		},
+		{
+			code: '.-block {}',
+			message: 'Expected class name "-block" to use the [block] syntax. (' + plugin.ruleName + ')',
+		},
+		{
+			code: '.--block {}',
+			message: 'Expected class name "--block" to use the [block]--[modifier] syntax. (' + plugin.ruleName + ')',
+		},
+		{
+			code: '.m--modifier__block {}',
+			message: 'Expected class name "m--modifier__block" to use the [block]__[element]--[modifier] syntax. (' + plugin.ruleName + ')',
+		},
+		{
+			code: '.is--state-name {}',
+			message: 'Expected class name "is--state-name" to use the is-[block]--[is] syntax. (' + plugin.ruleName + ')',
+		},
+		{
+			code: '.is-m-block {}',
+			message: 'Expected class name "is-m-block" to use the is-[block]--[is] syntax. (' + plugin.ruleName + ')',
 		},
 	],
 });

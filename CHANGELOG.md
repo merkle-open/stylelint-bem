@@ -1,6 +1,8 @@
-## 4.0.0-SNAPSHOT
+## 4.0.0
 
-- [feature] add rule to disallow hyphens at start and end of block parts
+- [feature] BREAKING: add rule to disallow hyphens at start and end of block parts
+- [feature] add possibility to disable prefixes by configuration 
+- [maintenance] update dependecies
 
 ## 3.1.3
 

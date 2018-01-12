@@ -83,7 +83,7 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 		}
 		if (parsedClassName.pattern) {
 			validSyntax += `${parsedClassName.pattern}-`;
-		} else {
+		} else if (validPatternPrefixes.length) {
 			validSyntax += '[prefix]-';
 		}
 		validSyntax += '[block]';
@@ -117,7 +117,7 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 
 		// Valid helper but invalid pattern prefix
 		// e.g. 'state-zz-button'
-		if (parsedClassName.helper && !parsedClassName.pattern) {
+		if (validPatternPrefixes.length && parsedClassName.helper && !parsedClassName.pattern) {
 			const validPrefixExamples = validPatternPrefixes
 				.map((prefix) => `"${namespace}${parsedClassName.helper}-${prefix}-"`)
 				.join(', ');
@@ -126,7 +126,7 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 		}
 
 		// Invalid pattern prefix
-		if (!parsedClassName.pattern) {
+		if (validPatternPrefixes.length && !parsedClassName.pattern) {
 			const validPrefixExamples = validPrefixes
 				.map((prefix) => `"${namespace}${prefix}-"`)
 				.join(', ');
