@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@namics/eslint-config": "4.2.0",
-    "eslint": "4.14.0",
+    "eslint": "4.15.0",
     "eslint-plugin-import": "2.8.0",
     "stylelint": "8.4.0",
     "stylelint-test-rule-tape": "0.2.0"
