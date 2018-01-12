@@ -64,6 +64,7 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 			className = className.substr(patternPrefix.length + 1);
 		}
 		result.name = className;
+		result.parts = className.split(/__|--/);
 		return result;
 	}
 
@@ -146,6 +147,10 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 		}
 		if (/(^|[^_])_([^_]|$)/.test(parsedClassName.name)) {
 			return 'use "_" only as element separator';
+		}
+		// disallow hyphens at start and end of block parts
+		if (parsedClassName.parts.some((elem) => (/^(-.*|.*-)$/).test(elem))) {
+			return 'use "-" only for composite names';
 		}
 		if (parsedClassName.helper && parsedClassName.name.indexOf('--') === -1) {
 			return `use the ${getValidSyntax(className, namespace)} syntax`;

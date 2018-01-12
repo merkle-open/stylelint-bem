@@ -127,6 +127,30 @@ testRule(plugin.rule, {
 			message: 'Expected class name "m--modifier" to use the m-[block]--[modifier] syntax. (' + plugin.ruleName + ')',
 		},
 		{
+			code: '.m-block-__element {}',
+			message: 'Expected class name "m-block-__element" to use "-" only for composite names. (' + plugin.ruleName + ')',
+		},
+		{
+			code: '.m-block__-element {}',
+			message: 'Expected class name "m-block__-element" to use "-" only for composite names. (' + plugin.ruleName + ')',
+		},
+		{
+			code: '.m-block__element- {}',
+			message: 'Expected class name "m-block__element-" to use "-" only for composite names. (' + plugin.ruleName + ')',
+		},
+		{
+			code: '.m-block_--modifier {}',
+			message: 'Expected class name "m-block_--modifier" to use "_" only as element separator. (' + plugin.ruleName + ')',
+		},
+		{
+			code: '.m-block--_modifier {}',
+			message: 'Expected class name "m-block--_modifier" to use "_" only as element separator. (' + plugin.ruleName + ')',
+		},
+		{
+			code: '.m-block--modifier_ {}',
+			message: 'Expected class name "m-block--modifier_" to use "_" only as element separator. (' + plugin.ruleName + ')',
+		},
+		{
 			code: '.state-m--state {}',
 			message: 'Expected class name "state-m--state" to use the state-m-[block]--[state] syntax. (' + plugin.ruleName + ')',
 		},

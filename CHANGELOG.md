@@ -1,3 +1,7 @@
+## 4.0.0-SNAPSHOT
+
+- [feature] add rule to disallow hyphens at start and end of block parts
+
 ## 3.1.3
 
 - [maintenance] update dependecies
