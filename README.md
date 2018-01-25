@@ -74,6 +74,21 @@ and in case of emergency you can overwrite the default prefixes
 }
 ```  
 
+And you can config could the classname contain uppercase letters (default is false)
+
+```js
+{
+  "plugins": [
+    "@namics/stylelint-bem"
+  ],
+  "rules": {
+    "plugin/stylelint-bem-namics": {
+      "containUppercase": true
+    }
+  }
+}
+```
+
 ## Valid examples
 
 ### Default Pattern Prefixes 
