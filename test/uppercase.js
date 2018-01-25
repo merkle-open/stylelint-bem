@@ -11,22 +11,22 @@ testRule(plugin.rule, {
 
 	accept: [
 		{
-			code: '.a-block {}',
+			code: '.a-testBlock {}',
 		},
 		{
-			code: '.m-block {}',
+			code: '.m-appleBlock {}',
 		},
 		{
-			code: '.o-block {}',
+			code: '.o-bananaBlock {}',
 		},
 		{
-			code: '.l-block {}',
+			code: '.l-canonBlock {}',
 		},
 		{
-			code: '.g-block {}',
+			code: '.g-dryBlock {}',
 		},
 		{
-			code: '.h-block {}',
+			code: '.h-errorBlock {}',
 		},
 
 		{
