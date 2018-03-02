@@ -1,16 +1,21 @@
+## 5.x
+
+- [maintenance] BREAKING: drop node 4 support
+- [maintenance] update dependencies
+
 ## 4.0.0
 
 - [feature] BREAKING: add rule to disallow hyphens at start and end of block parts
 - [feature] add possibility to disable prefixes by configuration 
-- [maintenance] update dependecies
+- [maintenance] update dependencies
 
 ## 3.1.3
 
-- [maintenance] update dependecies
+- [maintenance] update dependencies
 
 ## 3.1.2
 
-- [maintenance] update dependecies
+- [maintenance] update dependencies
 - [maintanance] add node 8 ci tests
 
 ## 3.1.1
@@ -20,7 +25,7 @@
 ## 3.1.0
 
 - [feature] add possiblilty to overwrite default patternPrefixes and patternHelpers (#1)
-- [maintenance] update dependecies
+- [maintenance] update dependencies
 
 ## 3.0.2
 
