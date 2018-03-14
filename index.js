@@ -106,7 +106,7 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 	 */
 	function getClassNameErrors(className, namespace) {
 
-		if (/[A-Z]/.test(className)) {
+		if (!options.containUppercase && (/[A-Z]/).test(className)) {
 			return 'contain no uppercase letters';
 		}
 
