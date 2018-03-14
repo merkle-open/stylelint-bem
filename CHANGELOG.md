@@ -1,4 +1,4 @@
-## 5.x
+## 5.0.0
 
 - [maintenance] BREAKING: drop node 4 support
 - [maintenance] update dependencies
