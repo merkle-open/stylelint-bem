@@ -155,7 +155,7 @@ Please see the [CHANGELOG.md](https://github.com/namics/stylelint-bem-namics/blo
 [npm-url]: https://npmjs.org/package/@namics/stylelint-bem
 [travis-image]: https://travis-ci.org/namics/stylelint-bem-namics.svg?branch=master
 [travis-url]: https://travis-ci.org/namics/stylelint-bem-namics
-[appveyor-image]: https://ci.appveyor.com/api/projects/status/78cvmg8pvijfs1r6/branch/master?svg=true
+[appveyor-image]: https://ci.appveyor.com/api/projects/status/1fh5v6xitjpto341/branch/master?svg=true
 [appveyor-url]: https://ci.appveyor.com/project/namics/stylelint-bem-namics/branch/master
 [daviddm-image]: https://david-dm.org/namics/stylelint-bem-namics.svg
 [daviddm-url]: https://david-dm.org/namics/stylelint-bem-namics
