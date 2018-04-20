@@ -4,6 +4,7 @@
 const stylelint = require('stylelint');
 const resolvedNestedSelector = require('postcss-resolve-nested-selector');
 const extractCssClasses = require('css-selector-classes');
+const util = require('util');
 
 const ruleName = 'plugin/stylelint-bem-namics';
 const messages = stylelint.utils.ruleMessages(ruleName, {
@@ -11,6 +12,11 @@ const messages = stylelint.utils.ruleMessages(ruleName, {
 		return `Expected class name "${selector}" to ${expectedSelector}.`;
 	},
 });
+
+const addNamespace = util.deprecate((namespace, namespaces) => {
+	namespaces.push(namespace);
+}, 'Using the "namespace" option of @namics/stylelint-bem is deprecated. ' +
+'Please use the new namespaces option which allows using multiple namespaces');
 
 module.exports = stylelint.createPlugin(ruleName, (options) => {
 	options = options || '';
@@ -36,18 +42,22 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 	 * Extracts the namespace, helper and prefix from the given className
 	 * 'ux-state-a-button'
 	 * @param {string} fullClassName the class name
-	 * @param {string} namespace (optional) namespace
+	 * @param {string[]} namespaces (optional) namespace
 	 * @returns {Object} namespace, helper, pattern, name
 	 *
 	 */
-	function parseClassName(fullClassName, namespace) {
+	function parseClassName(fullClassName, namespaces) {
 		const result = {};
 		let className = fullClassName;
 		// Extract the namespace
-		if (namespace) {
-			if (className.indexOf(namespace) !== 0) {
+		if (namespaces.length) {
+			const namespaceIndex = namespaces.findIndex((namespace) => {
+				return className.startsWith(namespace);
+			});
+			if (namespaceIndex === -1) {
 				return result;
 			}
+			const namespace = namespaces[namespaceIndex];
 			result.namespace = namespace;
 			className = className.substr(namespace.length);
 		}
@@ -72,12 +82,13 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 	 * Helper for error messages to tell the correct syntax
 	 *
 	 * @param {string} className the class name
-	 * @param {string} namespace (optional) namespace
+	 * @param {string[]} namespaces (optional) namespace
 	 * @returns {string} valid syntax
 	 */
-	function getValidSyntax(className, namespace) {
-		const parsedClassName = parseClassName(className, namespace);
-		let validSyntax = namespace;
+	function getValidSyntax(className, namespaces) {
+		const parsedClassName = parseClassName(className, namespaces);
+		// Try to guess the namespaces or use the first one
+		let validSyntax = parsedClassName.namespace || namespaces[0] || '';
 		if (parsedClassName.helper) {
 			validSyntax += `${parsedClassName.helper}-`;
 		}
@@ -101,32 +112,39 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 	/**
 	 * Validates the given className and returns the error if it's not valid
 	 * @param {string} className - the name of the class e.g. 'a-button'
-	 * @param {string} namespace - the namespace (optional)
+	 * @param {string[]} namespaces - the namespace (optional)
 	 * @returns {string} error message
 	 */
-	function getClassNameErrors(className, namespace) {
+	function getClassNameErrors(className, namespaces) {
 
 		if (/[A-Z]/.test(className)) {
 			return 'contain no uppercase letters';
 		}
 
-		const parsedClassName = parseClassName(className, namespace);
-		if (namespace && namespace !== parsedClassName.namespace) {
-			return `use the namespace "${namespace}"`;
+		const parsedClassName = parseClassName(className, namespaces);
+		const isAnyNamespaceUsed = namespaces.some((namespace) => parsedClassName.namespace === namespace);
+		if (namespaces.length && !isAnyNamespaceUsed) {
+			return namespaces.length > 1
+				? `use one of the valid namespaces "${namespaces.join('", "')}"`
+				: `use the namespace "${namespaces[0]}"`;
 		}
 
 		// Valid helper but invalid pattern prefix
 		// e.g. 'state-zz-button'
 		if (validPatternPrefixes.length && parsedClassName.helper && !parsedClassName.pattern) {
+			// Try to guess the namespace
+			const namespace = parsedClassName.namespace || namespaces[0] || '';
 			const validPrefixExamples = validPatternPrefixes
 				.map((prefix) => `"${namespace}${parsedClassName.helper}-${prefix}-"`)
 				.join(', ');
-			return `use the ${getValidSyntax(className, namespace)} syntax. ` +
+			return `use the ${getValidSyntax(className, namespaces)} syntax. ` +
 				`Valid ${parsedClassName.helper} prefixes: ${validPrefixExamples}`;
 		}
 
 		// Invalid pattern prefix
 		if (validPatternPrefixes.length && !parsedClassName.pattern) {
+			// Try to guess the namespace
+			const namespace = parsedClassName.namespace || namespaces[0] || '';
 			const validPrefixExamples = validPrefixes
 				.map((prefix) => `"${namespace}${prefix}-"`)
 				.join(', ');
@@ -134,13 +152,13 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 		}
 
 		if (!(/^[a-z]/.test(parsedClassName.name))) {
-			return `use the ${getValidSyntax(className, namespace)} syntax`;
+			return `use the ${getValidSyntax(className, namespaces)} syntax`;
 		}
 		if (/___/.test(parsedClassName.name)) {
 			return 'use only two "_" as element separator';
 		}
 		if (/--.*__/.test(parsedClassName.name)) {
-			return `use the ${getValidSyntax(className, namespace)} syntax`;
+			return `use the ${getValidSyntax(className, namespaces)} syntax`;
 		}
 		if (/--(-|.*--)/.test(parsedClassName.name)) {
 			return 'use only one "--" modifier separator';
@@ -153,7 +171,7 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 			return 'use "-" only for composite names';
 		}
 		if (parsedClassName.helper && parsedClassName.name.indexOf('--') === -1) {
-			return `use the ${getValidSyntax(className, namespace)} syntax`;
+			return `use the ${getValidSyntax(className, namespaces)} syntax`;
 		}
 	}
 
@@ -168,7 +186,14 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 			return;
 		}
 
-		const namespace = options.namespace || '';
+		const namespaces = options.namespaces || [];
+
+		// As we now support options.namespaces
+		// the following lines will be removed in future:
+		if (options.namespace) {
+			addNamespace(options.namespace, namespaces);
+		}
+
 		const classNameErrorCache = {};
 		root.walkRules((rule) => {
 			// Skip keyframes
@@ -195,7 +220,7 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 					}
 					classNames.forEach((className) => {
 						if (classNameErrorCache[className] === undefined) {
-							classNameErrorCache[className] = getClassNameErrors(className, namespace, rule);
+							classNameErrorCache[className] = getClassNameErrors(className, namespaces, rule);
 						}
 						if (classNameErrorCache[className]) {
 							stylelint.utils.report({
