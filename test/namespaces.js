@@ -170,6 +170,10 @@ testRule(plugin.rule, {
 			message: 'Expected class name "a-block" to use one of the valid namespaces "namespace1-", "namespace2-". (' + plugin.ruleName + ')',
 		},
 		{
+			code: '.namespace-a-block {}',
+			message: 'Expected class name "namespace-a-block" to use one of the valid namespaces "namespace1-", "namespace2-". (' + plugin.ruleName + ')',
+		},
+		{
 			code: '.namespace1-z-block {}',
 			message: 'Expected class name "namespace1-z-block" to start with a valid prefix: "namespace1-a-", "namespace1-m-", "namespace1-o-", "namespace1-l-", "namespace1-g-", "namespace1-h-", "namespace1-state-". (' + plugin.ruleName + ')',
 		},
