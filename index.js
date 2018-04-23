@@ -14,7 +14,9 @@ const messages = stylelint.utils.ruleMessages(ruleName, {
 });
 
 const addNamespace = util.deprecate((namespace, namespaces) => {
-	namespaces.push(namespace);
+	if (!namespaces.includes(namespace)) {
+		namespaces.push(namespace);
+	}
 }, 'Using the "namespace" option of @namics/stylelint-bem is deprecated. ' +
 'Please use the new namespaces option which allows using multiple namespaces');
 
