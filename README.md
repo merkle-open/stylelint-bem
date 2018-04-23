@@ -27,7 +27,7 @@ npm install @namics/stylelint-bem --save-dev
 
 ### Advanced configuration
 
-You can define an optional namespace which has to be prepended before every class name:
+You can define one or more namespaces which has to be prepended before every class name:
 
 ```js
 {

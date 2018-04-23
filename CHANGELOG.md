@@ -1,3 +1,8 @@
+## 5.1.0
+
+- [feature] #10 add support for multiple namespaces
+- [maintenance] update dependencies
+
 ## 5.0.0
 
 - [maintenance] BREAKING: drop node 4 support
