@@ -130,3 +130,32 @@ testRule(plugin.rule, {
 		},
 	],
 });
+
+// merge deprecated namespace with namespaces
+testRule(plugin.rule, {
+	ruleName: plugin.ruleName,
+	config: {
+		namespace: 'namespace-',
+		namespaces: ['namespace1-', 'namespace2-'],
+	},
+	skipBasicChecks: true,
+
+	accept: [
+		{
+			code: '.namespace-a-block {}',
+		},
+		{
+			code: '.namespace1-m-block {}',
+		},
+		{
+			code: '.namespace2-o-block {}',
+		},
+	],
+
+	reject: [
+		{
+			code: '.a-block {}',
+			message: 'Expected class name "a-block" to use one of the valid namespaces "namespace1-", "namespace2-", "namespace-". (' + plugin.ruleName + ')',
+		},
+	],
+});

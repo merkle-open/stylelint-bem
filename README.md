@@ -36,7 +36,7 @@ You can define an optional namespace which has to be prepended before every clas
   ],
   "rules": {
     "plugin/stylelint-bem-namics": {
-      "namespace": "ux-"
+      "namespaces": ["ux-"]
     }
   }
 }
