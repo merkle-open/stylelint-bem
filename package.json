@@ -26,7 +26,19 @@
     "linter",
     "bem"
   ],
-  "author": "Jan Nicklas",
+  "author": "Namics AG",
+  "contributors": [
+    {
+      "name": "Jan Nicklas",
+      "email": "j.nicklas@me.com",
+      "url": "https://github.com/jantimon"
+    },
+    {
+      "name": "Ernst Ammann",
+      "email": "ernscht@gmail.com",
+      "url": "https://github.com/ernscht"
+    }
+  ],
   "license": "MIT",
   "dependencies": {
     "css-selector-classes": "0.1.2",

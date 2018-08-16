@@ -1,5 +1,10 @@
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](http://opensource.org/licenses/MIT) 
+[![NPM version](https://badge.fury.io/js/%40namics%2Fstylelint-bem.svg)](https://npmjs.org/package/@namics/stylelint-bem)
+[![Build Status](https://travis-ci.org/namics/stylelint-bem-namics.svg?branch=master)](https://travis-ci.org/namics/stylelint-bem-namics)
+[![Build Status](https://ci.appveyor.com/api/projects/status/1fh5v6xitjpto341/branch/master?svg=true)](https://ci.appveyor.com/project/namics/stylelint-bem-namics/branch/master)
+[![Dependency Status](https://david-dm.org/namics/stylelint-bem-namics.svg)](https://david-dm.org/namics/stylelint-bem-namics)
+
 # Stylelint BEM Namics
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Build Status][appveyor-image]][appveyor-url] [![Dependency Status][daviddm-image]][daviddm-url]
 
 Verifies that the given css/less/scss follows the following BEM code conventions.
 
@@ -145,17 +150,3 @@ the linting again:
 ## Changelog
 
 Please see the [CHANGELOG.md](https://github.com/namics/stylelint-bem-namics/blob/master/CHANGELOG.md)
-
-## License
-
-[MIT license](http://opensource.org/licenses/MIT)
-
-
-[npm-image]: https://badge.fury.io/js/%40namics%2Fstylelint-bem.svg
-[npm-url]: https://npmjs.org/package/@namics/stylelint-bem
-[travis-image]: https://travis-ci.org/namics/stylelint-bem-namics.svg?branch=master
-[travis-url]: https://travis-ci.org/namics/stylelint-bem-namics
-[appveyor-image]: https://ci.appveyor.com/api/projects/status/1fh5v6xitjpto341/branch/master?svg=true
-[appveyor-url]: https://ci.appveyor.com/project/namics/stylelint-bem-namics/branch/master
-[daviddm-image]: https://david-dm.org/namics/stylelint-bem-namics.svg
-[daviddm-url]: https://david-dm.org/namics/stylelint-bem-namics
