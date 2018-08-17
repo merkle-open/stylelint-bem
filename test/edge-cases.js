@@ -13,6 +13,10 @@ testRule(plugin.rule, {
 		{
 			code: '@keyframes blue-background-change { 0% { background: black } }',
 		},
+		// Should not conflict with scss placeholders
+		{
+			code: '%placeholder { }',
+		},
 		// Should not conflict with less mixins
 		{
 			code: '.mixin() { }',

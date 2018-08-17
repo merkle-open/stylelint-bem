@@ -203,6 +203,10 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 				return;
 			}
 			rule.selectors.forEach((selector) => {
+				if (selector.startsWith('%')) {
+					// Skip scss placeholders
+					return;
+				}
 				if (selector.indexOf('(') !== -1 && (selector.indexOf(':') === -1 || selector.indexOf('@') !== -1)) {
 					// Skip less mixins
 					return;
