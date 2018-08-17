@@ -1,3 +1,8 @@
+## 5.1.1
+
+- [fix] allow scss placeholders
+- [maintenance] update dependencies
+
 ## 5.1.0
 
 - [feature] #10 add support for multiple namespaces
