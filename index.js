@@ -119,7 +119,7 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 	 */
 	function getClassNameErrors(className, namespaces) {
 
-		if (/[A-Z]/.test(className)) {
+		if ((/[A-Z]/).test(className)) {
 			return 'contain no uppercase letters';
 		}
 
@@ -153,19 +153,19 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 			return `start with a valid prefix: ${validPrefixExamples}`;
 		}
 
-		if (!(/^[a-z]/.test(parsedClassName.name))) {
+		if (!((/^[a-z]/).test(parsedClassName.name))) {
 			return `use the ${getValidSyntax(className, namespaces)} syntax`;
 		}
-		if (/___/.test(parsedClassName.name)) {
+		if ((/___/).test(parsedClassName.name)) {
 			return 'use only two "_" as element separator';
 		}
-		if (/--.*__/.test(parsedClassName.name)) {
+		if ((/--.*__/).test(parsedClassName.name)) {
 			return `use the ${getValidSyntax(className, namespaces)} syntax`;
 		}
-		if (/--(-|.*--)/.test(parsedClassName.name)) {
+		if ((/--(-|.*--)/).test(parsedClassName.name)) {
 			return 'use only one "--" modifier separator';
 		}
-		if (/(^|[^_])_([^_]|$)/.test(parsedClassName.name)) {
+		if ((/(^|[^_])_([^_]|$)/).test(parsedClassName.name)) {
 			return 'use "_" only as element separator';
 		}
 		// disallow hyphens at start and end of block parts
