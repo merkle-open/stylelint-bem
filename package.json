@@ -8,7 +8,7 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "prepublish": "npm test",
+    "prepublishOnly": "npm test",
     "pretest": "npm run lint",
     "test": "node test"
   },
@@ -50,9 +50,9 @@
   },
   "devDependencies": {
     "@namics/eslint-config": "6.0.1",
-    "eslint": "5.6.0",
+    "eslint": "5.8.0",
     "eslint-plugin-import": "2.14.0",
-    "stylelint": "9.6.0",
+    "stylelint": "9.7.1",
     "stylelint-test-rule-tape": "0.2.0"
   }
 }
