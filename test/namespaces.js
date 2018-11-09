@@ -161,7 +161,6 @@ testRule(plugin.rule, {
 		{
 			code: '.namespace2-h-block__block {}',
 		},
-
 	],
 
 	reject: [
