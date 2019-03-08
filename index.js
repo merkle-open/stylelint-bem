@@ -239,11 +239,18 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 							classNameErrorCache[className] = getClassNameErrors(className, namespaces, rule);
 						}
 						if (classNameErrorCache[className]) {
+							// add prefix dot to className if it is scss interpolation case
+							// in order to report the originalSelector rather than the mutated one
+							const prefix = selector !== originalSelector ? '.' : '';
+							const stringToBeReplaced = `${prefix}${className}`;
 							stylelint.utils.report({
 								ruleName,
 								result,
 								node: rule,
-								message: messages.expected(className, classNameErrorCache[className]),
+								message: messages.expected(
+									stringToBeReplaced.replace(selector, originalSelector),
+									classNameErrorCache[className]
+								),
 							});
 						}
 					});
