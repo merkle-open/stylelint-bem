@@ -12,7 +12,7 @@ const messages = stylelint.utils.ruleMessages(ruleName, {
 		return `Expected class name "${selector}" to ${expectedSelector}.`;
 	},
 });
-const SCSS_INTERPOLATION_PLACEHOLDER = '$$$placeholder$$$';
+const SCSS_INTERPOLATION_PLACEHOLDER = 'placeholder';
 
 const addNamespace = util.deprecate((namespace, namespaces) => {
 	if (!namespaces.includes(namespace)) {
@@ -179,7 +179,6 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 	}
 
 	return (root, result) => {
-		// console.log("~~~~~~~~~~"); // eslint-disable-line
 		const validOptions = stylelint.utils.validateOptions({
 			ruleName,
 			result,
@@ -200,7 +199,6 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 
 		const classNameErrorCache = {};
 		root.walkRules((rule) => {
-			// console.log(rule, "~~~~~~~~~~"); // eslint-disable-line
 			// Skip keyframes
 			if (rule.parent.name === 'keyframes') {
 				return;
@@ -210,14 +208,9 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 				// get scss variable expression
 				// if further error occurs
 				// IDE or terminal can still refer to the origin selector with scssVariable
-				let scssVariable = '';
 				if ((/#{\$\S+/).test(selector)) {
 					// replace scss variable interpolation with placeholder
-					selector = selector.replace(/#{$[^}+]}/g, ((match) => {
-						scssVariable = match;
-						return SCSS_INTERPOLATION_PLACEHOLDER;
-					}));
-					return;
+					selector = selector.replace(/#{\$[^}]+}/g, SCSS_INTERPOLATION_PLACEHOLDER);
 				}
 				if (selector.startsWith('%')) {
 					// Skip scss placeholders
@@ -238,7 +231,7 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 							ruleName,
 							result,
 							node: rule,
-							message: e.message.replace(SCSS_INTERPOLATION_PLACEHOLDER, scssVariable),
+							message: e.message.replace(selector, originalSelector),
 						});
 					}
 					classNames.forEach((className) => {
