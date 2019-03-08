@@ -12,6 +12,7 @@ const messages = stylelint.utils.ruleMessages(ruleName, {
 		return `Expected class name "${selector}" to ${expectedSelector}.`;
 	},
 });
+const SCSS_INTERPOLATION_PLACEHOLDER = '$$$placeholder$$$';
 
 const addNamespace = util.deprecate((namespace, namespaces) => {
 	if (!namespaces.includes(namespace)) {
@@ -178,6 +179,7 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 	}
 
 	return (root, result) => {
+		// console.log("~~~~~~~~~~"); // eslint-disable-line
 		const validOptions = stylelint.utils.validateOptions({
 			ruleName,
 			result,
@@ -198,11 +200,25 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 
 		const classNameErrorCache = {};
 		root.walkRules((rule) => {
+			// console.log(rule, "~~~~~~~~~~"); // eslint-disable-line
 			// Skip keyframes
 			if (rule.parent.name === 'keyframes') {
 				return;
 			}
-			rule.selectors.forEach((selector) => {
+			rule.selectors.forEach((originalSelector) => {
+				let selector = originalSelector;
+				// get scss variable expression
+				// if further error occurs
+				// IDE or terminal can still refer to the origin selector with scssVariable
+				let scssVariable = '';
+				if ((/#{\$\S+/).test(selector)) {
+					// replace scss variable interpolation with placeholder
+					selector = selector.replace(/#{$[^}+]}/g, ((match) => {
+						scssVariable = match;
+						return SCSS_INTERPOLATION_PLACEHOLDER;
+					}));
+					return;
+				}
 				if (selector.startsWith('%')) {
 					// Skip scss placeholders
 					return;
@@ -217,11 +233,12 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 						// Remove ampersand from inner sass mixins and parse the class names
 						classNames = extractCssClasses(resolvedSelector.replace(/&\s*/ig, ''));
 					} catch (e) {
+						// replace scss variable if necessary
 						stylelint.utils.report({
 							ruleName,
 							result,
 							node: rule,
-							message: e.message,
+							message: e.message.replace(SCSS_INTERPOLATION_PLACEHOLDER, scssVariable),
 						});
 					}
 					classNames.forEach((className) => {

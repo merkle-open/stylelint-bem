@@ -41,3 +41,16 @@ testRule(plugin.rule, {
 		},
 	],
 });
+
+// handle scss variable interpolation
+testRule(plugin.rule, {
+	ruleName: plugin.ruleName,
+	config: {},
+	skipBasicChecks: true,
+	syntax: 'scss',
+	accept: [
+		{
+			code: '.a-block__#{$element} { }',
+		},
+	],
+});
