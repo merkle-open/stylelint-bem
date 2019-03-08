@@ -53,4 +53,9 @@ testRule(plugin.rule, {
 			code: '.a-block__#{$element} { }',
 		},
 	],
+	reject: [
+		{
+			code: '.a-block__#{$element}___b { }',
+		},
+	],
 });
