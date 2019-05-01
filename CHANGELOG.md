@@ -1,3 +1,8 @@
+## 6.0.0
+
+- [Breaking] drop node 6 support
+- [maintenance] update dependencies
+
 ## 5.1.1
 
 - [fix] allow scss placeholders

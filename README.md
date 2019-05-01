@@ -1,7 +1,6 @@
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](http://opensource.org/licenses/MIT) 
 [![NPM version](https://badge.fury.io/js/%40namics%2Fstylelint-bem.svg)](https://npmjs.org/package/@namics/stylelint-bem)
 [![Build Status](https://travis-ci.org/namics/stylelint-bem-namics.svg?branch=master)](https://travis-ci.org/namics/stylelint-bem-namics)
-[![Build Status](https://ci.appveyor.com/api/projects/status/1fh5v6xitjpto341/branch/master?svg=true)](https://ci.appveyor.com/project/namics/stylelint-bem-namics/branch/master)
 [![Dependency Status](https://david-dm.org/namics/stylelint-bem-namics.svg)](https://david-dm.org/namics/stylelint-bem-namics)
 
 # Stylelint BEM Namics
