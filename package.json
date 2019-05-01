@@ -8,7 +8,7 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "prepublishOnly": "npm test",
+    "prepublishOnly": "npm test && pkg-ok",
     "pretest": "npm run lint",
     "test": "node test"
   },
@@ -54,6 +54,7 @@
     "eslint-plugin-import": "2.17.2",
     "husky": "2.1.0",
     "lint-staged": "8.1.5",
+    "pkg-ok": "2.3.1",
     "stylelint": "10.0.1",
     "stylelint-test-rule-tape": "0.2.0"
   },
