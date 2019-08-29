@@ -7,10 +7,12 @@
     "node": ">=8"
   },
   "scripts": {
+    "clean": "npx rimraf package-lock.json node_modules",
     "lint": "eslint .",
     "prepublishOnly": "npm test && pkg-ok",
     "pretest": "npm run lint",
-    "test": "node test"
+    "test": "node test",
+    "update-dependencies": "npm-check-updates -u"
   },
   "repository": {
     "type": "git",
@@ -50,10 +52,11 @@
   },
   "devDependencies": {
     "@namics/eslint-config": "8.0.0",
-    "eslint": "6.2.1",
+    "eslint": "6.2.2",
     "eslint-plugin-import": "2.18.2",
     "husky": "3.0.4",
-    "lint-staged": "9.2.3",
+    "lint-staged": "9.2.5",
+    "npm-check-updates": "3.1.21",
     "pkg-ok": "2.3.1",
     "stylelint": "10.1.0",
     "stylelint-test-rule-tape": "0.2.0"
