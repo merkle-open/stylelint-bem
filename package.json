@@ -48,17 +48,17 @@
     "postcss-resolve-nested-selector": "0.1.1"
   },
   "peerDependencies": {
-    "stylelint": ">=7.0.0 <12.0.0"
+    "stylelint": ">=7.0.0 <13.0.0"
   },
   "devDependencies": {
     "@namics/eslint-config": "8.0.2",
     "eslint": "6.6.0",
     "eslint-plugin-import": "2.18.2",
     "husky": "3.0.9",
-    "lint-staged": "9.4.2",
-    "npm-check-updates": "3.1.25",
+    "lint-staged": "9.4.3",
+    "npm-check-updates": "3.2.1",
     "pkg-ok": "2.3.1",
-    "stylelint": "11.0.0",
+    "stylelint": "12.0.0",
     "stylelint-test-rule-tape": "0.2.0"
   },
   "husky": {
