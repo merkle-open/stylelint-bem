@@ -1,3 +1,11 @@
+## 6.2.0
+
+- [feature] add support for stylelint 12.x
+
+## 6.1.0
+
+- [feature] add support for stylelint 11.x
+
 ## 6.0.0
 
 - [Breaking] drop node 6 support
