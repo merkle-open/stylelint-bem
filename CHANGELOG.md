@@ -1,3 +1,8 @@
+## 6.3.0
+
+- [feature] add support for stylelint 13.x
+- [maintenance] update dependencies
+
 ## 6.2.0
 
 - [feature] add support for stylelint 12.x
