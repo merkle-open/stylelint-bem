@@ -7,7 +7,7 @@
     "node": ">=8"
   },
   "scripts": {
-    "clean": "npx rimraf package-lock.json node_modules",
+    "clean": "npx --ignore-existing --quiet rimraf package-lock.json node_modules",
     "lint": "eslint .",
     "prepublishOnly": "npm test && pkg-ok",
     "pretest": "npm run lint",
