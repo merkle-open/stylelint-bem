@@ -55,7 +55,7 @@
     "eslint": "7.9.0",
     "eslint-plugin-import": "2.22.0",
     "husky": "4.3.0",
-    "lint-staged": "10.3.0",
+    "lint-staged": "10.4.0",
     "npm-check-updates": "9.0.1",
     "pkg-ok": "2.3.1",
     "stylelint": "13.0.0",
