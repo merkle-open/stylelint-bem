@@ -117,13 +117,14 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 	 * @param {string[]} namespaces - the namespace (optional)
 	 * @returns {string} error message
 	 */
-	function getClassNameErrors(className, namespaces) {
+	function getClassNameErrors(className, namespaces, options) {
+		const firstLetterUppercase = options.firstLetterUppercase || false;
 
-		if ((/[A-Z][a-z]+([-]{1,2}[a-z]+)*/).test(className) && options.firstLetterUppercase) {
+		if ((/[A-Z][a-z]+([-]{1,2}[a-z]+)*/).test(className) && firstLetterUppercase) {
 			return 'contain first uppercase letters';
 		}
 
-		if ((/[A-Z]/).test(className) && !options.firstLetterUppercase) {
+		if ((/[A-Z]/).test(className) && !firstLetterUppercase) {
 			return 'contain no uppercase letters';
 		}
 
@@ -230,7 +231,7 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 					}
 					classNames.forEach((className) => {
 						if (classNameErrorCache[className] === undefined) {
-							classNameErrorCache[className] = getClassNameErrors(className, namespaces, rule);
+							classNameErrorCache[className] = getClassNameErrors(className, namespaces, options);
 						}
 						if (classNameErrorCache[className]) {
 							stylelint.utils.report({
