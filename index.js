@@ -117,7 +117,7 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 	 * @param {string[]} namespaces - the namespace (optional)
 	 * @returns {string} error message
 	 */
-	function getClassNameErrors(className, namespaces, options) {
+	function getClassNameErrors(className, namespaces) {
 		const firstLetterUppercase = options.firstLetterUppercase || false;
 
 		if (!(/^[A-Z][a-z]+(([-]{1,2}|[_]{2})[a-z0-9]+)*/).test(className) && firstLetterUppercase) {
@@ -165,7 +165,7 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 				if (!((/^[a-z0-9]/).test(part)) && index > 0) {
 					error = true;
 				}
-			})
+			});
 			if (error) {
 				return `use the ${getValidSyntax(className, namespaces)} syntax`;
 			}
