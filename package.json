@@ -1,10 +1,10 @@
 {
   "name": "@namics/stylelint-bem",
-  "version": "6.3.2",
+  "version": "6.3.3",
   "description": "A stylelint plugin for the Namics BEM definitions",
   "main": "index.js",
   "engines": {
-    "node": ">=10"
+    "node": ">=8"
   },
   "scripts": {
     "clean": "npx --ignore-existing --quiet rimraf package-lock.json node_modules",
