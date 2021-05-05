@@ -1,3 +1,7 @@
+## 6.3.4
+
+- [docs] GitHub organization name change
+
 ## 6.3.3
 
 - [chore] repo url change

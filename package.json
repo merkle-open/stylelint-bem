@@ -1,6 +1,6 @@
 {
   "name": "@namics/stylelint-bem",
-  "version": "6.3.3",
+  "version": "6.3.4",
   "description": "A stylelint plugin for the Namics BEM definitions",
   "main": "index.js",
   "engines": {
@@ -44,7 +44,7 @@
     "eslint-plugin-import": "2.22.1",
     "husky": "4.3.8",
     "lint-staged": "10.5.4",
-    "npm-check-updates": "11.5.7",
+    "npm-check-updates": "11.5.10",
     "stylelint": "13.8.0",
     "stylelint-test-rule-tape": "0.2.0"
   },
