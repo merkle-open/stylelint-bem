@@ -7,7 +7,7 @@ in the form of feedback, bug reports and even better - pull requests :)
 
 ### Give feedback on issues
 
-We're always looking for more opinions on discussions in the [issue tracker](https://github.com/namics/stylelint-bem/issues).
+We're always looking for more opinions on discussions in the [issue tracker](https://github.com/merkle-open/stylelint-bem/issues).
 It's a good opportunity to influence the future direction of the plugin.
 
 ### Creating Issues
@@ -19,7 +19,7 @@ In order for us to help you, please check that you've completed the following st
 * Include as much information about the issue as possible, including
 any output you've received, what OS and version you're on, etc.
   
-[Submit your issue](https://github.com/namics/stylelint-bem/issues/new)
+[Submit your issue](https://github.com/merkle-open/stylelint-bem/issues/new)
 
 ### Opening pull requests
 

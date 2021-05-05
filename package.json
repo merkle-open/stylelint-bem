@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/namics/stylelint-bem.git"
+    "url": "https://github.com/merkle-open/stylelint-bem.git"
   },
   "files": [
     "index.js"
@@ -29,7 +29,7 @@
     "linter",
     "bem"
   ],
-  "author": "Namics AG",
+  "author": "Merkle Inc.",
   "license": "MIT",
   "dependencies": {
     "css-selector-classes": "0.1.2",

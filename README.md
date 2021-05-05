@@ -1,12 +1,12 @@
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](http://opensource.org/licenses/MIT) 
 [![NPM version](https://badge.fury.io/js/%40namics%2Fstylelint-bem.svg)](https://npmjs.org/package/@namics/stylelint-bem)
-[![Build Status](https://github.com/namics/stylelint-bem/workflows/ci/badge.svg)](https://github.com/namics/stylelint-bem/actions)
+[![Build Status](https://github.com/merkle-open/stylelint-bem/workflows/ci/badge.svg)](https://github.com/merkle-open/stylelint-bem/actions)
 
 # Stylelint BEM Namics
 
 Verifies that the given css/less/scss follows the following BEM code conventions.
 
-![screenshot](https://raw.githubusercontent.com/namics/stylelint-bem/master/example.png)
+![screenshot](https://raw.githubusercontent.com/merkle-open/stylelint-bem/master/example.png)
 
 ## Installation
 
@@ -147,4 +147,4 @@ the linting again:
 
 ## Changelog
 
-Please see the [CHANGELOG.md](https://github.com/namics/stylelint-bem/blob/master/CHANGELOG.md)
+Please see the [CHANGELOG.md](https://github.com/merkle-open/stylelint-bem/blob/master/CHANGELOG.md)
