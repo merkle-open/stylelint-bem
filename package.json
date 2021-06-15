@@ -40,11 +40,11 @@
   },
   "devDependencies": {
     "@namics/eslint-config": "9.0.6",
-    "eslint": "7.27.0",
-    "eslint-plugin-import": "2.23.3",
+    "eslint": "7.28.0",
+    "eslint-plugin-import": "2.23.4",
     "husky": "4.3.8",
     "lint-staged": "11.0.0",
-    "npm-check-updates": "11.5.13",
+    "npm-check-updates": "11.6.0",
     "stylelint": "13.13.1",
     "stylelint-test-rule-tape": "0.2.0"
   },
