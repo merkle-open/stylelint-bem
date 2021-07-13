@@ -1,13 +1,11 @@
-/* eslint max-len:off, prefer-template:off */
-const testRule = require('stylelint-test-rule-tape');
-const plugin = require('..');
+/* eslint max-len:off */
+const { ruleName } = require('../index');
 
 // Sass and Less edgecases
-testRule(plugin.rule, {
-	ruleName: plugin.ruleName,
+testRule({
+	ruleName,
 	config: {},
 	skipBasicChecks: true,
-
 	accept: [
 		// Should not conflict with keyframes
 		{
@@ -34,10 +32,10 @@ testRule(plugin.rule, {
 			code: '@mixin specialCase { &:hover { } }',
 		},
 	],
-
 	reject: [
 		{
 			code: '.no-mixin:not(x) { }',
+			message: `Expected class name "no-mixin" to start with a valid prefix: "a-", "m-", "o-", "l-", "g-", "h-", "state-". (${ruleName})`,
 		},
 	],
 });

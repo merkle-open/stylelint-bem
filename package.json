@@ -11,7 +11,7 @@
     "lint": "eslint .",
     "prepublishOnly": "npm test && npx pkg-ok@2.3.1",
     "pretest": "npm run lint",
-    "test": "node test",
+    "test": "jest",
     "update-dependencies": "npm-check-updates -u"
   },
   "repository": {
@@ -43,15 +43,22 @@
     "eslint": "7.30.0",
     "eslint-plugin-import": "2.23.4",
     "husky": "4.3.8",
+    "jest": "27.0.6",
+    "jest-preset-stylelint": "4.1.1",
     "lint-staged": "11.0.0",
     "npm-check-updates": "11.8.2",
-    "stylelint": "13.13.1",
-    "stylelint-test-rule-tape": "0.2.0"
+    "stylelint": "13.13.1"
   },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "jest": {
+    "preset": "jest-preset-stylelint",
+    "setupFiles": [
+      "./jest.setup.js"
+    ]
   },
   "lint-staged": {
     "*.js": [
