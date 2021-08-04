@@ -39,14 +39,14 @@
     "stylelint": ">=7.0.0 <14.0.0"
   },
   "devDependencies": {
-    "@namics/eslint-config": "9.0.6",
-    "eslint": "7.30.0",
+    "@namics/eslint-config": "9.1.1",
+    "eslint": "7.32.0",
     "eslint-plugin-import": "2.23.4",
     "husky": "4.3.8",
     "jest": "27.0.6",
     "jest-preset-stylelint": "4.1.1",
-    "lint-staged": "11.0.0",
-    "npm-check-updates": "11.8.2",
+    "lint-staged": "11.1.1",
+    "npm-check-updates": "11.8.3",
     "stylelint": "13.13.1"
   },
   "husky": {
