@@ -9,6 +9,7 @@
   "scripts": {
     "clean": "npx --ignore-existing --quiet rimraf package-lock.json node_modules",
     "lint": "eslint .",
+    "prepare": "husky install",
     "prepublishOnly": "npm test && npx pkg-ok@2.3.1",
     "pretest": "npm run lint",
     "test": "jest",
@@ -42,17 +43,12 @@
     "@namics/eslint-config": "9.1.1",
     "eslint": "7.32.0",
     "eslint-plugin-import": "2.24.2",
-    "husky": "4.3.8",
+    "husky": "7.0.2",
     "jest": "27.2.1",
     "jest-preset-stylelint": "4.1.1",
     "lint-staged": "11.1.2",
     "npm-check-updates": "11.8.5",
     "stylelint": "13.13.1"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "jest": {
     "preset": "jest-preset-stylelint",
