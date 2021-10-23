@@ -1,3 +1,8 @@
+## 7.0.0
+
+- [BREAKING] drop support for node < 12
+- [feature] add support for stylelint 14.x
+
 ## 6.3.4
 
 - [docs] GitHub organization name change
