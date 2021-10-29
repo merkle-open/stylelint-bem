@@ -7,10 +7,10 @@
     "node": ">=12"
   },
   "scripts": {
-    "clean": "npx --ignore-existing --quiet rimraf package-lock.json node_modules",
+    "clean": "npx -y rimraf package-lock.json node_modules",
     "lint": "eslint .",
     "prepare": "husky install",
-    "prepublishOnly": "npm test && npx pkg-ok@2.3.1",
+    "prepublishOnly": "npm test && npx -y pkg-ok@2.3.1",
     "pretest": "npm run lint",
     "test": "jest",
     "update-dependencies": "npm-check-updates -u"
