@@ -46,9 +46,9 @@
     "husky": "7.0.4",
     "jest": "27.5.1",
     "jest-preset-stylelint": "5.0.1",
-    "lint-staged": "12.3.5",
-    "npm-check-updates": "12.5.3",
-    "stylelint": "14.5.3"
+    "lint-staged": "12.3.7",
+    "npm-check-updates": "12.5.4",
+    "stylelint": "14.6.1"
   },
   "jest": {
     "preset": "jest-preset-stylelint",
