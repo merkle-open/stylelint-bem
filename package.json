@@ -42,13 +42,13 @@
   "devDependencies": {
     "@namics/eslint-config": "9.1.1",
     "eslint": "7.32.0",
-    "eslint-plugin-import": "2.25.4",
+    "eslint-plugin-import": "2.26.0",
     "husky": "7.0.4",
-    "jest": "27.5.1",
-    "jest-preset-stylelint": "5.0.1",
-    "lint-staged": "12.3.7",
-    "npm-check-updates": "12.5.4",
-    "stylelint": "14.6.1"
+    "jest": "28.0.3",
+    "jest-preset-stylelint": "5.0.3",
+    "lint-staged": "12.4.1",
+    "npm-check-updates": "12.5.11",
+    "stylelint": "14.8.1"
   },
   "jest": {
     "preset": "jest-preset-stylelint",
