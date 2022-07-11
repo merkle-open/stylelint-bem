@@ -44,10 +44,10 @@
     "eslint": "7.32.0",
     "eslint-plugin-import": "2.26.0",
     "husky": "8.0.1",
-    "jest": "28.1.1",
+    "jest": "28.1.2",
     "jest-preset-stylelint": "5.0.4",
-    "lint-staged": "13.0.1",
-    "npm-check-updates": "13.1.5",
+    "lint-staged": "13.0.3",
+    "npm-check-updates": "15.2.6",
     "stylelint": "14.9.1"
   },
   "jest": {
