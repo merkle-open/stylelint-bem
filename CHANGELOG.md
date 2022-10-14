@@ -1,3 +1,8 @@
+## 8.0.0
+
+- [BREAKING] drop support for node < 14
+- [maintenance] update dependencies
+
 ## 7.0.0
 
 - [BREAKING] drop support for node < 12
