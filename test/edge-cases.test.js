@@ -37,5 +37,10 @@ testRule({
 			code: '.no-mixin:not(x) { }',
 			message: `Expected class name "no-mixin" to start with a valid prefix: "a-", "m-", "o-", "l-", "g-", "h-", "state-". (${ruleName})`,
 		},
+		// should conflict with scss variable interpolation, because we can not validate the definitive selector
+		{
+			code: '@mixin icon($name) { .a-icon-#{$name} {} }',
+			message: 'Unknown word (CssSyntaxError)',
+		},
 	],
 });
