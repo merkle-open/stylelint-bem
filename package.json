@@ -43,12 +43,12 @@
     "@namics/eslint-config": "9.1.1",
     "eslint": "7.32.0",
     "eslint-plugin-import": "2.26.0",
-    "husky": "8.0.1",
-    "jest": "29.2.2",
+    "husky": "8.0.2",
+    "jest": "29.3.1",
     "jest-preset-stylelint": "6.0.0",
-    "lint-staged": "13.0.3",
-    "npm-check-updates": "16.3.15",
-    "stylelint": "14.14.0"
+    "lint-staged": "13.0.4",
+    "npm-check-updates": "16.4.3",
+    "stylelint": "14.15.0"
   },
   "jest": {
     "preset": "jest-preset-stylelint",
