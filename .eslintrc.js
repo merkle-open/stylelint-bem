@@ -1,6 +1,6 @@
 module.exports = {
 	extends: [
-		'@namics/eslint-config/configurations/es8-node.js',
+		'@merkle-open/eslint-config/configurations/es8-node.js',
 	],
 	globals: {
 		testRule: 'readonly',
