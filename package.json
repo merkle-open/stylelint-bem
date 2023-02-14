@@ -1,6 +1,6 @@
 {
   "name": "@namics/stylelint-bem",
-  "version": "8.0.0",
+  "version": "8.1.0",
   "description": "A stylelint plugin for the Namics BEM definitions",
   "main": "index.js",
   "engines": {

@@ -1,3 +1,7 @@
+## 8.1.0
+
+- [feature] add support for stylelint 15.x
+
 ## 8.0.0
 
 - [BREAKING] drop support for node < 14
