@@ -37,18 +37,18 @@
     "postcss-resolve-nested-selector": "0.1.1"
   },
   "peerDependencies": {
-    "stylelint": ">=7.0.0 <15.0.0"
+    "stylelint": ">=7.0.0 <16.0.0"
   },
   "devDependencies": {
     "@merkle-open/eslint-config": "1.0.0",
     "eslint": "7.32.0",
     "eslint-plugin-import": "2.27.5",
     "husky": "8.0.3",
-    "jest": "29.4.1",
+    "jest": "29.4.2",
     "jest-preset-stylelint": "6.0.0",
-    "lint-staged": "13.1.0",
-    "npm-check-updates": "16.6.3",
-    "stylelint": "14.16.1"
+    "lint-staged": "13.1.2",
+    "npm-check-updates": "16.7.4",
+    "stylelint": "15.1.0"
   },
   "jest": {
     "preset": "jest-preset-stylelint",
