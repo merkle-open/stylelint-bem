@@ -13,7 +13,7 @@
     "prepublishOnly": "npm test && npx -y pkg-ok@2.3.1",
     "pretest": "npm run lint",
     "test": "jest",
-    "update-dependencies": "npm-check-updates -u"
+    "update-dependencies": "npm-check-updates -u --deprecated"
   },
   "repository": {
     "type": "git",
@@ -44,11 +44,11 @@
     "eslint": "7.32.0",
     "eslint-plugin-import": "2.27.5",
     "husky": "8.0.3",
-    "jest": "29.4.2",
-    "jest-preset-stylelint": "6.0.0",
-    "lint-staged": "13.1.2",
-    "npm-check-updates": "16.7.4",
-    "stylelint": "15.1.0"
+    "jest": "29.5.0",
+    "jest-preset-stylelint": "6.1.0",
+    "lint-staged": "13.2.1",
+    "npm-check-updates": "16.10.7",
+    "stylelint": "15.4.0"
   },
   "jest": {
     "preset": "jest-preset-stylelint",
