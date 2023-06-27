@@ -47,8 +47,8 @@
     "jest": "29.5.0",
     "jest-preset-stylelint": "6.1.0",
     "lint-staged": "13.2.2",
-    "npm-check-updates": "16.10.12",
-    "stylelint": "15.8.0"
+    "npm-check-updates": "16.10.13",
+    "stylelint": "15.9.0"
   },
   "jest": {
     "preset": "jest-preset-stylelint",
