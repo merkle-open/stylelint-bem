@@ -40,15 +40,15 @@
     "stylelint": ">=7.0.0 <16.0.0"
   },
   "devDependencies": {
-    "@merkle-open/eslint-config": "1.0.0",
+    "@merkle-open/eslint-config": "2.0.0",
     "eslint": "7.32.0",
     "eslint-plugin-import": "2.27.5",
     "husky": "8.0.3",
-    "jest": "29.5.0",
+    "jest": "29.6.0",
     "jest-preset-stylelint": "6.1.0",
-    "lint-staged": "13.2.2",
+    "lint-staged": "13.2.3",
     "npm-check-updates": "16.10.13",
-    "stylelint": "15.9.0"
+    "stylelint": "15.10.1"
   },
   "jest": {
     "preset": "jest-preset-stylelint",
