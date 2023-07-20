@@ -44,11 +44,11 @@
     "eslint": "7.32.0",
     "eslint-plugin-import": "2.27.5",
     "husky": "8.0.3",
-    "jest": "29.6.0",
+    "jest": "29.6.1",
     "jest-preset-stylelint": "6.1.0",
     "lint-staged": "13.2.3",
-    "npm-check-updates": "16.10.13",
-    "stylelint": "15.10.1"
+    "npm-check-updates": "16.10.16",
+    "stylelint": "15.10.2"
   },
   "jest": {
     "preset": "jest-preset-stylelint",
