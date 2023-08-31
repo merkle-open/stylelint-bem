@@ -3,7 +3,7 @@
 // @see https://github.com/stylelint/stylelint/blob/master/docs/developer-guide/plugins.md
 const stylelint = require('stylelint');
 const resolvedNestedSelector = require('postcss-resolve-nested-selector');
-const extractCssClasses = require('css-selector-classes');
+const extractCssClasses = require('./lib/css-selector-classes');
 const util = require('util');
 
 const ruleName = 'plugin/stylelint-bem-namics';

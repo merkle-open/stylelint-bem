@@ -33,7 +33,7 @@
   "author": "Merkle Inc.",
   "license": "MIT",
   "dependencies": {
-    "css-selector-classes": "0.1.2",
+    "css-selector-parser": "2.3.2",
     "postcss-resolve-nested-selector": "0.1.1"
   },
   "peerDependencies": {
