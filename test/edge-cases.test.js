@@ -31,6 +31,14 @@ testRule({
 		{
 			code: '@mixin specialCase { &:hover { } }',
 		},
+		// Should not conflict with scss nested outer selector
+		{
+			code: `.a-button {
+			  &:focus {
+			    [data-whatintent="keyboard"] & {}
+			  }
+			}`,
+		},
 	],
 	reject: [
 		{
