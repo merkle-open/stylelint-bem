@@ -1,3 +1,9 @@
+## 9.0.0
+
+- [BREAKING] drop support for node < 16
+- [fix] avoid conflicts with some pseudo-classes and improvements for attribute and nested selectors (#26)
+- [maintenance] update dependencies
+
 ## 8.1.0
 
 - [feature] add support for stylelint 15.x
