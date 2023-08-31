@@ -4,7 +4,7 @@
   "description": "A stylelint plugin for the Namics BEM definitions",
   "main": "index.js",
   "engines": {
-    "node": ">=14"
+    "node": ">=16"
   },
   "scripts": {
     "clean": "npx -y rimraf package-lock.json node_modules",
