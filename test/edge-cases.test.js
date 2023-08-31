@@ -31,6 +31,10 @@ testRule({
 		{
 			code: '@mixin specialCase { &:hover { } }',
 		},
+		// Should not conflict with unknown pseudo elements
+		{
+			code: '.m-search { &::-ms-clear { } &::-webkit-search-cancel-button { } }',
+		},
 		// Should not conflict with scss nested outer selector
 		{
 			code: `.a-button {
