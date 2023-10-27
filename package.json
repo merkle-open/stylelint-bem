@@ -42,14 +42,14 @@
   },
   "devDependencies": {
     "@merkle-open/eslint-config": "3.0.0",
-    "eslint": "8.51.0",
-    "eslint-plugin-import": "2.28.1",
+    "eslint": "8.52.0",
+    "eslint-plugin-import": "2.29.0",
     "husky": "8.0.3",
     "jest": "29.7.0",
     "jest-preset-stylelint": "6.3.1",
-    "lint-staged": "15.0.1",
+    "lint-staged": "15.0.2",
     "npm-check-updates": "16.14.6",
-    "stylelint": "15.10.3"
+    "stylelint": "15.11.0"
   },
   "jest": {
     "preset": "jest-preset-stylelint",
