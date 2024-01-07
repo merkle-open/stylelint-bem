@@ -1,3 +1,9 @@
+## 10.0.0
+
+- [BREAKING] drop support for node < 18.12.0
+- [BREAKING] drop support for stylelint < 14
+- [feat] add support for stylelint 16
+
 ## 9.0.0
 
 - [BREAKING] drop support for node < 16
