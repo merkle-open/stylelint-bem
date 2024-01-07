@@ -4,7 +4,7 @@
   "description": "A stylelint plugin for the Namics BEM definitions",
   "main": "index.js",
   "engines": {
-    "node": ">=16"
+    "node": ">=18.12.0"
   },
   "scripts": {
     "clean": "npx -y rimraf package-lock.json node_modules",
@@ -38,20 +38,22 @@
     "postcss-resolve-nested-selector": "0.1.1"
   },
   "peerDependencies": {
-    "stylelint": ">=7.0.0 <16.0.0"
+    "stylelint": ">=14.0.0 <17.0.0"
   },
   "devDependencies": {
     "@merkle-open/eslint-config": "3.0.0",
-    "eslint": "8.55.0",
-    "eslint-plugin-import": "2.29.0",
+    "eslint": "8.56.0",
+    "eslint-plugin-import": "2.29.1",
     "husky": "8.0.3",
     "jest": "29.7.0",
-    "jest-preset-stylelint": "6.3.2",
+    "jest-light-runner": "0.6.0",
+    "jest-preset-stylelint": "7.0.0",
     "lint-staged": "15.2.0",
-    "npm-check-updates": "16.14.11",
-    "stylelint": "15.11.0"
+    "npm-check-updates": "16.14.12",
+    "stylelint": "16.1.0"
   },
   "jest": {
+    "runner": "jest-light-runner",
     "preset": "jest-preset-stylelint",
     "setupFiles": [
       "./jest.setup.js"
