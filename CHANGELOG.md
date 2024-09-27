@@ -1,3 +1,7 @@
+## 10.0.1
+
+- [maintenance] update dependency postcss-resolve-nested-selector
+
 ## 10.0.0
 
 - [BREAKING] drop support for node < 18.12.0
