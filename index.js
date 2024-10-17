@@ -178,11 +178,11 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 	}
 
 	return (root, result) => {
-		const validOptions = stylelint.utils.validateOptions({
-			ruleName,
+		const validOptions = stylelint.utils.validateOptions(
 			result,
-			actual: options,
-		});
+			ruleName,
+			{ actual: options },
+		);
 
 		if (!validOptions) {
 			return;
