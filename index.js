@@ -18,7 +18,7 @@ const addNamespace = util.deprecate((namespace, namespaces) => {
 		namespaces.push(namespace);
 	}
 }, 'Using the "namespace" option of @namics/stylelint-bem is deprecated. ' +
-'Please use the new namespaces option which allows using multiple namespaces');
+	'Please use the new namespaces option which allows using multiple namespaces');
 
 module.exports = stylelint.createPlugin(ruleName, (options) => {
 	options = options || '';
@@ -176,13 +176,28 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 			return `use the ${getValidSyntax(className, namespaces)} syntax`;
 		}
 	}
-
+	const isString = (val) => typeof val === 'string' || val instanceof String;
 	return (root, result) => {
-		const validOptions = stylelint.utils.validateOptions({
-			ruleName,
+		let possible;
+		if (options === true || options === false) {
+			possible = [true, false];
+		} else {
+			possible = {
+				patternPrefixes: [isString],
+				helperPrefixes: [isString],
+				namespaces: [isString],
+				namespace: isString,
+			};
+		}
+
+		const validOptions = stylelint.utils.validateOptions(
 			result,
-			actual: options,
-		});
+			ruleName,
+			{
+				actual: options,
+				optional: true,
+				possible,
+			});
 
 		if (!validOptions) {
 			return;
