@@ -7,7 +7,6 @@ testRule({
 		patternPrefixes: ['a', 'b', 'cc'],
 		helperPrefixes: ['state', 'is'],
 	},
-	skipBasicChecks: true,
 	accept: [
 		{
 			code: '.a-block {}',
@@ -109,7 +108,6 @@ testRule({
 	config: {
 		patternPrefixes: 'string',
 	},
-	skipBasicChecks: true,
 	// should use default patternPrefixes
 	accept: [
 		{
@@ -156,7 +154,6 @@ testRule({
 		patternPrefixes: [],
 		helperPrefixes: [],
 	},
-	skipBasicChecks: true,
 	accept: [
 		{
 			code: '.block {}',
@@ -241,7 +238,6 @@ testRule({
 		patternPrefixes: [],
 		helperPrefixes: ['is', 'has'],
 	},
-	skipBasicChecks: true,
 	accept: [
 		{
 			code: '.block {}',

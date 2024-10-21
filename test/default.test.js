@@ -4,7 +4,6 @@ const { ruleName } = require('../index');
 testRule({
 	ruleName,
 	config: true,
-	skipBasicChecks: true,
 	accept: [
 		{
 			code: '.a-block {}',

@@ -5,7 +5,6 @@ const { ruleName } = require('../index');
 testRule({
 	ruleName,
 	config: {},
-	skipBasicChecks: true,
 	accept: [
 		// Should not conflict with :not pseudo class
 		{

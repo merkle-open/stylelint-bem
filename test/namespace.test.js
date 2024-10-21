@@ -6,8 +6,6 @@ testRule({
 	config: {
 		namespace: 'namespace-',
 	},
-	skipBasicChecks: true,
-
 	accept: [
 		{
 			code: '.namespace-a-block {}',
@@ -137,7 +135,6 @@ testRule({
 		namespace: 'namespace-',
 		namespaces: ['namespace1-', 'namespace2-'],
 	},
-	skipBasicChecks: true,
 	accept: [
 		{
 			code: '.namespace-a-block {}',

@@ -16,12 +16,12 @@ testRule({
 testRule({
 	ruleName,
 	config: {
-		namespace: true,
+		namespaces: true,
 	},
 	reject: [
 		{
 			code: '.test {}',
-			message: `Invalid value "true" for option "namespace" of rule "${ruleName}"`,
+			message: `Invalid value "true" for option "namespaces" of rule "${ruleName}"`,
 		},
 	],
 });
