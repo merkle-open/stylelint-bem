@@ -13,6 +13,16 @@ const messages = stylelint.utils.ruleMessages(ruleName, {
 	},
 });
 
+// options
+const isString = (val) => typeof val === 'string' || val instanceof String;
+const optionsObjectSchema = {
+	patternPrefixes: [isString],
+	helperPrefixes: [isString],
+	namespaces: [isString],
+	namespace: isString, // deprecated
+};
+
+// utils
 const addNamespace = util.deprecate((namespace, namespaces) => {
 	if (!namespaces.includes(namespace)) {
 		namespaces.push(namespace);
@@ -176,20 +186,9 @@ module.exports = stylelint.createPlugin(ruleName, (options) => {
 			return `use the ${getValidSyntax(className, namespaces)} syntax`;
 		}
 	}
-	const isString = (val) => typeof val === 'string' || val instanceof String;
-	return (root, result) => {
-		let possible;
-		if (options === true || options === false) {
-			possible = [true, false];
-		} else {
-			possible = {
-				patternPrefixes: [isString],
-				helperPrefixes: [isString],
-				namespaces: [isString],
-				namespace: isString,
-			};
-		}
 
+	return (root, result) => {
+		const possible = (options === true || options === false) ? [true, false] : optionsObjectSchema;
 		const validOptions = stylelint.utils.validateOptions(
 			result,
 			ruleName,
