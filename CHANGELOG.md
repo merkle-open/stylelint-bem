@@ -1,3 +1,7 @@
+## 10.1.0
+
+- [fix] config validation is now performed correctly #32
+
 ## 10.0.1
 
 - [maintenance] update dependency postcss-resolve-nested-selector
