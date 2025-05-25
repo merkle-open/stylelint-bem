@@ -51,12 +51,12 @@ testRule({
 		// should conflict with scss variable interpolation, because we can not validate the definitive selector
 		{
 			code: '@mixin icon($name) { .a-icon-#{$name} {} }',
-			message: 'Unknown word (CssSyntaxError)',
+			message: 'Unknown word $name (CssSyntaxError)',
 		},
 		// should conflict with less modifyVars interpolation, because we can not validate the definitive selector
 		{
 			code: '.@{css-prefix}-selector {}',
-			message: 'Unknown word (CssSyntaxError)',
+			message: 'Unknown word css-prefix (CssSyntaxError)',
 		},
 	],
 });
