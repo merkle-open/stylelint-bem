@@ -48,9 +48,9 @@
     "jest": "29.7.0",
     "jest-light-runner": "0.7.9",
     "jest-preset-stylelint": "7.3.0",
-    "lint-staged": "16.1.2",
+    "lint-staged": "16.1.5",
     "npm-check-updates": "18.0.2",
-    "stylelint": "16.22.0"
+    "stylelint": "16.23.1"
   },
   "jest": {
     "runner": "jest-light-runner",
