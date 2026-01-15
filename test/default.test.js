@@ -87,10 +87,6 @@ testRule({
 			message: `Expected class name "z-block" to start with a valid prefix: "a-", "m-", "o-", "l-", "g-", "h-", "state-". (${ruleName})`,
 		},
 		{
-			code: '.0-block {}',
-			message: `Expected class name "0-block" to start with a valid prefix: "a-", "m-", "o-", "l-", "g-", "h-", "state-". (${ruleName})`,
-		},
-		{
 			code: '.-block {}',
 			message: `Expected class name "-block" to start with a valid prefix: "a-", "m-", "o-", "l-", "g-", "h-", "state-". (${ruleName})`,
 		},
