@@ -1,3 +1,8 @@
+## 11.0.0
+
+- [BREAKING] drop support for node < 20.19.0
+- [feature] update css-selector-parser to 3.3.0 (#35)
+
 ## 10.1.0
 
 - [fix] config validation is now performed correctly #32
@@ -10,7 +15,7 @@
 
 - [BREAKING] drop support for node < 18.12.0
 - [BREAKING] drop support for stylelint < 14
-- [feat] add support for stylelint 16
+- [feature] add support for stylelint 16
 
 ## 9.0.0
 
