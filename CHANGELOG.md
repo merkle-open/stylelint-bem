@@ -1,7 +1,7 @@
 ## 11.0.0
 
 - [BREAKING] drop support for node < 20.19.0
-- [feature] update css-selector-parser to 3.3.0 (#35)
+- [feature] update css-selector-parser to 3.3.0 (#35)
 
 ## 10.1.0
 
