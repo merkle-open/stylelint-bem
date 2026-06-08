@@ -1,3 +1,7 @@
+## 11.1.0
+
+- [feat] add support for stylelint v17 #35
+
 ## 11.0.0
 
 - [BREAKING] drop support for node < 20.19.0
