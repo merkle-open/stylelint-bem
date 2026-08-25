@@ -1,5 +1,4 @@
 /* eslint complexity:off */
-'use strict';
 // @see https://github.com/stylelint/stylelint/blob/master/docs/developer-guide/plugins.md
 const stylelint = require('stylelint');
 const resolvedNestedSelector = require('postcss-resolve-nested-selector');
