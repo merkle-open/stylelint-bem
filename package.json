@@ -13,7 +13,7 @@
     "prepublishOnly": "npm test && npx -y pkg-ok@2.3.1",
     "pretest": "npm run lint",
     "test": "jest",
-    "update-dependencies": "npm-check-updates -u --deprecated"
+    "update-dependencies": "npm-check-updates -u --deprecated -x eslint"
   },
   "repository": {
     "type": "git",
@@ -45,12 +45,12 @@
     "eslint": "9.39.5",
     "eslint-plugin-import": "2.32.0",
     "husky": "9.1.7",
-    "jest": "30.4.2",
-    "jest-light-runner": "0.8.1",
+    "jest": "30.5.2",
+    "jest-light-runner": "0.8.2",
     "jest-preset-stylelint": "9.2.0",
-    "lint-staged": "17.3.0",
+    "lint-staged": "17.6.0",
     "npm-check-updates": "23.1.0",
-    "stylelint": "17.14.1"
+    "stylelint": "17.16.0"
   },
   "jest": {
     "runner": "jest-light-runner",
