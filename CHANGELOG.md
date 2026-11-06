@@ -1,4 +1,4 @@
-## Unreleased
+## 11.2.0
 
 - [feat] add support for stylelint v18
 - [fix] update postcss-resolve-nested-selector dependency
