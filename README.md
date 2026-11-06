@@ -14,6 +14,8 @@ Verifies that the given css/less/scss follows the following BEM code conventions
 npm install @namics/stylelint-bem --save-dev
 ```
 
+This plugin supports stylelint 14 through 18. Stylelint 18 requires Node.js ^22.22.2, ^24.15.0, or >=26.0.0.
+
 ## Configuration
 
 ### Simple configuration

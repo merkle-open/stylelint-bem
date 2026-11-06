@@ -38,7 +38,7 @@
     "postcss-resolve-nested-selector": "0.1.7"
   },
   "peerDependencies": {
-    "stylelint": ">=14.0.0 <18.0.0"
+    "stylelint": ">=14.0.0 <19.0.0"
   },
   "devDependencies": {
     "@merkle-open/eslint-config": "5.0.0",
@@ -47,10 +47,10 @@
     "husky": "9.1.7",
     "jest": "30.5.2",
     "jest-light-runner": "0.8.2",
-    "jest-preset-stylelint": "9.2.1",
+    "jest-preset-stylelint": "10.0.0",
     "lint-staged": "17.6.0",
     "npm-check-updates": "23.1.1",
-    "stylelint": "17.16.0"
+    "stylelint": "18.0.0"
   },
   "jest": {
     "runner": "jest-light-runner",
